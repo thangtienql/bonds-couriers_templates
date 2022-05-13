@@ -1,0 +1,366 @@
+/* Fonts */
+/* Color */
+/* Break point */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 125%;
+  /* start - remove Arrows/Spinners */
+  /* end - remove Arrows/Spinners */
+  /* start - style button submit */
+  /* end - style button submit */ }
+  body * {
+    box-sizing: border-box; }
+  body strong, body b {
+    font-weight: bold; }
+  body p {
+    margin: 0 0 12px; }
+  body img {
+    max-width: 100%; }
+  body input[type=checkbox], body input[type=radio] {
+    display: none; }
+    body input[type=checkbox] + label, body input[type=radio] + label {
+      position: relative;
+      display: flex !important;
+      align-items: center !important;
+      font-size: 14px !important;
+      font-weight: 400 !important;
+      color: #F5AF02;
+      cursor: pointer; }
+      body input[type=checkbox] + label::before, body input[type=radio] + label::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        outline: 0.5px solid #707070;
+        margin-right: 9px; }
+    body input[type=checkbox]:checked + label, body input[type=radio]:checked + label {
+      font-weight: 500 !important; }
+      body input[type=checkbox]:checked + label::before, body input[type=radio]:checked + label::before {
+        background: #294AA2; }
+  body input[type=radio] + label {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #F5AF02; }
+    body input[type=radio] + label::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 100%; }
+  body input[type=radio]:checked + label {
+    font-weight: bold !important; }
+    body input[type=radio]:checked + label::before {
+      background: #294AA2; }
+  body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+  body textarea {
+    width: 100%;
+    border-radius: 35px;
+    border: 1px solid rgba(77, 77, 77, 0.52);
+    height: 45px;
+    padding: 10px 20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #F5AF02;
+    background: #FFFFFF;
+    outline: none;
+    box-shadow: none; }
+    body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file])::placeholder,
+    body textarea::placeholder {
+      color: rgba(0, 0, 0, 0.24);
+      font-style: italic; }
+    body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]).invalid,
+    body textarea.invalid {
+      border-color: red; }
+    body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]).is-valid,
+    body textarea.is-valid {
+      background: rgba(141, 52, 106, 0.09);
+      border-color: rgba(77, 77, 77, 0.09); }
+    body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus,
+    body textarea:focus {
+      border: 1px solid #294AA2;
+      background: #FFFFFF; }
+  body textarea {
+    font-family: "Roboto", sans-serif;
+    height: 250px;
+    padding: 20px;
+    border-radius: 0; }
+  body input::-webkit-outer-spin-button,
+  body input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  body input[type=number] {
+    -moz-appearance: textfield; }
+  body input[type=submit], body input[type=button],
+  body button, body .btn {
+    background: #294AA2;
+    border-radius: 25px;
+    min-height: 43px;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 15px 31px;
+    text-decoration: none; }
+  body input[type=submit], body input[type=button], body button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer; }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-left: 0; }
+
+::-webkit-scrollbar-track {
+  background: none; }
+
+::-webkit-scrollbar-thumb {
+  background: #294AA2;
+  border-radius: 3px; }
+
+/* Fonts */
+/* Color */
+/* Break point */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/roboto/Roboto-Light.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/roboto/Roboto-Regular.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/roboto/Roboto-Medium.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/roboto/Roboto-Bold.ttf) format("truetype"); }
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/roboto/Roboto-Black.ttf) format("truetype"); }
+/* Fonts */
+/* Color */
+/* Break point */
+.bonds-wrap-page {
+  display: flex;
+  background: #FFFFFF; }
+  .bonds-wrap-page .menu-col {
+    width: 280px;
+    transition: .3s ease all; }
+    .bonds-wrap-page .menu-col .bonds-menu {
+      background: #294AA2;
+      padding: 33px 30px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .bonds-wrap-page .menu-col .bonds-menu__logo {
+        text-align: center; }
+        .bonds-wrap-page .menu-col .bonds-menu__logo img {
+          height: 38px;
+          width: auto; }
+      .bonds-wrap-page .menu-col .bonds-menu__nav {
+        margin-top: 73px; }
+        .bonds-wrap-page .menu-col .bonds-menu__nav .item {
+          display: block;
+          width: 100%;
+          padding: 16px 19px 15px;
+          border-radius: 10px;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 19px;
+          color: #FFFFFF;
+          text-decoration: none;
+          transition: .3s ease all; }
+          .bonds-wrap-page .menu-col .bonds-menu__nav .item:not(:last-child) {
+            margin-bottom: 18px; }
+          .bonds-wrap-page .menu-col .bonds-menu__nav .item.current, .bonds-wrap-page .menu-col .bonds-menu__nav .item:hover {
+            background-color: #F5AF02;
+            color: #294AA2; }
+      .bonds-wrap-page .menu-col .bonds-menu__bottom {
+        margin-top: 132px; }
+        .bonds-wrap-page .menu-col .bonds-menu__bottom__secured {
+          padding: 19px 23px;
+          background: #F4FBFF;
+          border-radius: 10px; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom__secured .title-secured {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            color: #294AA2;
+            margin: 0; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom__secured .list-img {
+            display: flex;
+            align-items: center;
+            margin-top: 16px; }
+            .bonds-wrap-page .menu-col .bonds-menu__bottom__secured .list-img img {
+              display: block; }
+              .bonds-wrap-page .menu-col .bonds-menu__bottom__secured .list-img img:not(:first-child) {
+                margin-left: 20px; }
+        .bonds-wrap-page .menu-col .bonds-menu__bottom__tips {
+          margin-top: 23px;
+          background: #F5AF02;
+          border-radius: 10px;
+          padding: 24px 22px; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .icon {
+            display: block; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+            color: #FFFFFF;
+            margin: 10px 0 0; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .content {
+            margin-top: 20px;
+            color: #ffffff; }
+            .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .content * {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 16px;
+              color: #FFFFFF; }
+            .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .content p {
+              margin-bottom: 16px; }
+              .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .content p:last-child {
+                margin-bottom: 0; }
+  .bonds-wrap-page .content-col {
+    width: calc(100% - 280px); }
+    .bonds-wrap-page .content-col .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 78px 28px 57px;
+      background: #FFFFFF;
+      box-shadow: 10px 5px 25px 5px rgba(0, 0, 0, 0.04); }
+      .bonds-wrap-page .content-col .top-bar__heading h2 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        color: #11175D;
+        margin: 0; }
+      .bonds-wrap-page .content-col .top-bar__account--login a {
+        min-width: 92px;
+        padding: 15px 31px; }
+      .bonds-wrap-page .content-col .top-bar__account--logged {
+        display: flex;
+        align-items: center;
+        padding: 6px 0px; }
+        .bonds-wrap-page .content-col .top-bar__account--logged .notification {
+          position: relative;
+          width: 32px;
+          height: 32px; }
+          .bonds-wrap-page .content-col .top-bar__account--logged .notification .new-notifi {
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            top: 0;
+            left: 0; }
+        .bonds-wrap-page .content-col .top-bar__account--logged .info-user {
+          display: flex;
+          align-items: center;
+          padding-left: 12px; }
+          .bonds-wrap-page .content-col .top-bar__account--logged .info-user .thumb-user {
+            width: 32px;
+            height: 32px;
+            display: block; }
+          .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap {
+            padding-left: 9px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: default; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta {
+              padding-right: 22px; }
+              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .name {
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 14px;
+                color: #000000; }
+              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .company {
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 12px;
+                color: #C4C4C4;
+                margin-top: 1px; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .toggle-info {
+              width: 8px;
+              height: 8px;
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+
+/* Fonts */
+/* Color */
+/* Break point */
+.first-screen-page {
+  background-image: linear-gradient(0deg, rgba(245, 175, 2, 0.75) 24.74%, rgba(245, 175, 2, 0) 100%), url(../images/bg-first-scr.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 110px 0 105px;
+  min-height: 100vh; }
+  .first-screen-page .notification-popup {
+    max-width: 565px;
+    margin: 0 auto;
+    background: #294AA2;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 45px;
+    position: relative; }
+    .first-screen-page .notification-popup .ic-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer; }
+    .first-screen-page .notification-popup .heading {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      color: #FFFFFF;
+      margin: 0; }
+    .first-screen-page .notification-popup .content {
+      margin-top: 28px; }
+      .first-screen-page .notification-popup .content p {
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        margin-bottom: 21px; }
+        .first-screen-page .notification-popup .content p:last-child {
+          margin-bottom: 0; }
+    .first-screen-page .notification-popup .notes {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 16px 51px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      color: #294AA2;
+      margin-top: 50px; }
+
+/*# sourceMappingURL=main.css.map */

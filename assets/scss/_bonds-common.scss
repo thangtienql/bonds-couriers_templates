@@ -195,5 +195,270 @@
                 }
             }
         }
+
+        .bonds-body-wrap{
+            .wrap-template{
+                max-width: 1054px;
+                padding: 0 16px;
+                margin: 0 auto;
+            }
+            .bonds-warning{
+                background: #EE1F45;
+                padding: 14.5px 57px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 16px;
+                color: #FFFFFF;
+            }
+
+            form{
+                .template-form{
+                    .title{
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 21px;
+                        color: #11175D;
+                    }
+                    .col-two-field{
+                        margin-top: 53px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        .bonds-field {
+                            position: relative;
+                            label{
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 16px;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+                                position: absolute;
+                                left: 35px;
+                                top: -7px;
+                                background: #ffffff;
+                                padding: 0 15px;
+                                z-index: 2;
+                            }
+                            .custom-select-wrap{
+                                cursor: pointer;
+                                display: inline-block;
+                                position: relative;
+                                font-size: 14px;
+                                line-height: 16px;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+                                height: 73px;
+                                width: 100%;
+
+                                .select-hidden{
+                                    visibility: hidden;
+                                    padding-right: 10px;
+                                }
+                                .custom-select{
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    left: 0;
+                                    border: 1px solid $color-primary;
+                                    background: #fff;
+                                    border-radius: 10px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    display: block;
+                                    vertical-align: middle;
+                                    padding: 28px 50px;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+
+                                    &:after{
+                                        content: "";
+                                        width: 12px;
+                                        height: 12px;
+                                        background-image: url(../images/icons/ic_select.svg);
+                                        background-repeat: no-repeat;
+                                        position: absolute;
+                                        background-size: contain;
+                                        top: 30px;
+                                        right: 24px;
+                                        transition: ease .25s all;
+                                    }
+                                }
+                                .options{
+                                    display: none;
+                                    position: absolute;
+                                    top: 56px;
+                                    right: 12px;
+                                    left: 12px;
+                                    width: calc(100% - 24px);
+                                    z-index: 999;
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style: none;
+                                    border: 1px solid #fbfbfb;
+                                    background-color: #fff;
+                                    box-shadow: #00000029 0 3px 6px;
+                                    li{
+                                        margin: 0;
+                                        padding: 12px 22px;
+                                        border-bottom: 1px solid rgba(112,112,112,.11);
+                                        font-weight: 400;
+                                        font-size: 14px;
+                                        line-height: 16px;
+                                        letter-spacing: 0.1em;
+                                        color: #000000;
+                                        &.selected{
+                                            background: #294AA2;
+                                            color: #ffffff;
+                                        }
+                                        &:hover{
+                                            background: #294AA2;
+                                            color: #ffffff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .col-2{
+                            width: calc(100% / 2);
+                            padding-right: 75px;
+                            &:last-child{
+                                padding-right: 0;
+                            }
+                        }
+                    }
+
+                    .rt-buttons-controls{
+                        margin-top: 36px;
+                        &.multi{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .template-view{
+                        margin-top: 56px;
+                        table{
+                            thead th{
+                                color: #000000;
+                                &:first-child{
+                                    padding: 0 15px 24px 16px;
+                                }
+                            }
+                            tbody tr td{
+                                input[type="checkbox"]{
+                                    display: block;
+                                }
+                                &.select-item{
+                                    .checkbox{
+                                        width: 22px;
+                                        height: 22px;
+                                        border-radius: 5px;
+                                        position: relative;
+                                        input{
+                                            margin: 0;
+                                            width: 22px;
+                                            height: 22px;
+                                            opacity: 0;
+                                            z-index: 3;
+                                            position: relative;
+                                            &:checked{
+                                                background: #294AA2;
+                                            }
+                                        }
+                                        label{
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            z-index: 2;
+                                            &:before{
+                                                width: 22px;
+                                                height: 22px;
+                                                background: transparent;
+                                                border: none;
+                                                margin: 0;
+                                                outline: none;
+                                            }
+                                        }
+                                    }
+                                }
+                                &.select_permanent{
+                                    .custom-select-wrap{
+                                        position: relative;
+                                        height: 35px;
+                                        width: 127px;
+                                        margin: 0 auto;
+                                        .select-hidden{
+                                            visibility: hidden;
+                                        }
+                                        .custom-select{
+                                            position: absolute;
+                                            background: #294AA2;
+                                            top: 0;
+                                            right: 0;
+                                            bottom: 0;
+                                            left: 0;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            display: block;
+                                            vertical-align: middle;
+                                            border-radius: 5px;
+                                            font-weight: 400;
+                                            font-size: 14px;
+                                            line-height: 16px;
+                                            letter-spacing: 0.1em;
+                                            color: #ffffff;
+                                            padding: 10px 23px;
+                                            text-align: center;
+                                            &:after{
+                                                content: "";
+                                                width: 9px;
+                                                height: 9px;
+                                                background-image: url(../images/icons/select-w.svg);
+                                                background-repeat: no-repeat;
+                                                position: absolute;
+                                                background-size: contain;
+                                                top: 14px;
+                                                right: 5px;
+                                                transition: ease .25s all;
+                                            }
+                                        }
+                                        .options{
+                                            display: none;
+                                            list-style: none;
+                                            margin: 0px;
+                                            padding: 0px;
+                                            position: absolute;
+                                            background: rgb(255, 255, 255);
+                                            width: 100%;
+                                            box-shadow: #00000029 0px 3px 6px;
+                                            z-index: 999;
+                                            top: 30px;
+                                            left: 0;
+                                            li{ 
+                                                cursor: pointer;
+                                                padding: 8px;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 16px;
+                                                letter-spacing: 0.1em;
+                                                color: #000000;
+                                            }
+                                        }
+                                    }
+                                }
+                                &.remove-item{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

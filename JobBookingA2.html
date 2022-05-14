@@ -97,33 +97,98 @@
 
                 <div class="bonds-body-wrap">
                     <!-- Start - Dashboard content-->
-                    <div class="first-screen-page">
-                        <div class="notification-popup popup">
-                            <img src="./assets/images/icons/ic-close.svg" class="ic-close">
-                            <h2 class="heading">Bonds Transport Group Service Update-NSW</h2>
+                    <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production
+                        purpose</div>
 
-                            <div class="content">
-                                <p>We wish to advise the current Covid 19 obligations placed on workers has resulted in
-                                    an
-                                    impact to our service offerings. We ask for your patience and understanding at this
-                                    time.</p>
-                                <p>Priority (PAL) & Express (EG) services will continue to take precedence over Standard
-                                    bookings.</p>
-                                <p>The health, safety and wellbeing of our workers, customers and the community remains
-                                    our
-                                    number one priority.</p>
-                                <p>NOTE: For security purposes make sure to Logout at the end of each session.</p>
-                                <p>Bonds will continue to closely monitor the current situation and continue to comply
-                                    with
-                                    relevant Government, Safety and health authority advice with respect to our ongoing
-                                    operations.</p>
-                                <p>Stay safe and Well!!</p>
-                            </div>
+                    <div class="content-body-booking">
+                        <div class="wrap-template">
+                            <form id="form-booking-accountA2" action="" method="post">
+                                <div class="template-form bonds-step bonds-step-4">
+                                    <div class="contact-info">
+                                        <div class="title">Contact Info</div>
+                                        <div class="col-two-field">
+                                            <div class="bonds-field col-2">
+                                                <label>Your Name</label>
+                                                <input type="text" name="name-booking-a2" required>
+                                            </div>
+                                            <div class="bonds-field col-2">
+                                                <label>Your Email / Phone Number</label>
+                                                <input type="text" name="email-phone-booking-a2" required>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="notes">
-                                You are are now logged on to our live database.
-                                All your bookings, enquiries etc. will be in real-time.
-                            </div>
+                                    <div class="manage-job">
+                                        <div class="title">Manage Job Notifications</div>
+                                        <div class="col-two-field">
+                                            <div class="bonds-field col-2">
+                                                <label>Job Status Messaging</label>
+                                                <select class="bonds-manage-job-select select-hidden"
+                                                    name="eBook[0][bond_manage_job]">
+                                                    <option value="pod" selected>POD</option>
+                                                    <option value="pickedup">Picked up</option>
+                                                    <option value="delay">Driver Delay</option>
+                                                    <option value="confirm">Confirm Job Booking</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field col-2">
+                                                <label>Email / Mobile</label>
+                                                <select class="bonds-email-phone-select select-hidden"
+                                                    name="eBook[0][bond_email_phone]">
+                                                    <option value="1" selected>Value 1</option>
+                                                    <option value="2">Value 2</option>
+                                                    <option value="3">Value 3</option>
+                                                    <option value="4">Value 4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rt-buttons-controls multi">
+                                        <div class="button-submit">
+                                            <input class="cta-button blue" type="submit" value="Add to Job">
+                                        </div>
+                                        <a class="cta-button yellow" href="#">Manage emails/phone..</a>
+                                    </div>
+
+                                    <div class="template-view">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Job Status</th>
+                                                    <th>Email / SMS</th>
+                                                    <th class="heading">Permanent</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="select-item">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <!-- <label></label> -->
+                                                        </div>
+                                                    </td>
+                                                    <td class="job_status">POD</td>
+                                                    <td>joshc@bondstg.com.au</td>
+                                                    <td class="select_permanent">
+                                                        <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <option value="n/a" selected>N/A</option>
+                                                            <option value="permanent">Permanent</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="remove-item">
+                                                        <a href="#">
+                                                            <img src="./assets/images/icons/remove_item.svg">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- End - Dashboard content-->

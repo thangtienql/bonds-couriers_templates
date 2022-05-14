@@ -55,20 +55,22 @@ body{
      input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
      textarea {
           width: 100%;
-          border-radius: 35px;
-          border: 1px solid rgba(77, 77, 77, 0.52);
-          height: 45px;
-          padding: 10px 20px;
+          border-radius: 10px;
+          border: 1px solid #294AA2;
+          height: 73px;
+          padding: 30px 50px;
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
           font-size: 14px;
+          line-height: 16px;
           font-weight: 400;
-          color: $color-secondary;
+          letter-spacing: 0.1em;
+          color: #000000;
           background: #FFFFFF;
           outline: none;
           box-shadow: none;
-          &::placeholder { color: rgba(0, 0, 0, 0.24); font-style: italic; }
+          &::placeholder { color: rgba(0, 0, 0, 0.24);}
           &.invalid { border-color: red; }
           &.is-valid {
               background: rgba(141, 52, 106, 0.09);
@@ -97,20 +99,21 @@ body{
   
       /* start - style button submit */
       input[type=submit], input[type=button],
-      button, .btn {
+      button, .btn, .cta-button{
           background: $color-primary;
-          border-radius: 25px;
-          min-height: 43px;
-          min-width: 200px;
+          border: none;
+          border-radius: 86px;
+          min-height: 60px;
+          min-width: 207px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: #FFFFFF;
           font-family: $font-primary;
-          font-size: 12px;
-          line-height: 14px;
+          font-size: 18px;
+          line-height: 21px;
           font-weight: bold;
-          padding: 15px 31px;
+          padding: 19px 30.5px 20px;
           text-decoration: none;
       }
       input[type=submit], input[type=button], button {
@@ -121,7 +124,116 @@ body{
           box-shadow: none;
           cursor: pointer;
       }
+
+      .button-submit{
+          position: relative;
+          &:after{
+            content: "";
+            width: calc(100% - 30px);
+            height: 68px;
+            filter: blur(43.0013px);
+            position: absolute;
+            top: 11px;
+            left: 15px;
+            background: rgba(25, 63, 246, 0.35);
+            z-index: -1;
+        }
+      }
+
+      .cta-button{
+            position: relative;
+            &:after{
+                content: "";
+                width: calc(100% - 30px);
+                height: 68px;
+                filter: blur(43.0013px);
+                position: absolute;
+                top: 11px;
+                left: 15px;
+                z-index: -1;
+            }
+            &.yellow{
+                background: $color-secondary;
+                &:after{
+                    background: rgba(245, 175, 2, 0.35);
+                }
+            }
+            &.blue{
+                background: $color-primary;
+                &:after{
+                    background: rgba(25, 63, 246, 0.35);
+                }
+            }
+      }
       /* end - style button submit */
+
+      /* start - tables */
+    .template-view{
+        @media (max-width: $scr-tablet){
+          table{
+            min-width: 700px;
+          }
+        }
+      }
+      table {
+          border-collapse: separate;
+          border-spacing: 0;
+            margin: 0;
+            width: 100%;
+            word-break: break-all;
+  
+          &::-webkit-scrollbar {
+            width:5px;
+            height:5px;
+            border-left:0;
+          }
+          &::-webkit-scrollbar-track {
+            background:none;
+          }
+          &::-webkit-scrollbar-thumb {
+            background: $color-primary;
+            border-radius:3px;
+          }
+
+          thead tr th{
+            border-bottom: 0.5px solid #C2D1D9;
+            &.heading{
+                text-align: center;
+            }
+          }
+  
+      }
+      tr {
+          &:nth-child(2n) {
+            background: rgba(129, 3, 82, 0.09);
+            // box-shadow: rgba(0, 0, 0, 0.16) 0 1px 3px;
+          }
+          th{
+            white-space: nowrap;
+          }
+      }
+      td, th {
+            text-align: left;
+            vertical-align: middle;
+          padding: 15px 24px;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0.1em;
+          color: #7C7C7C;
+          b { font-weight: 900; }
+          a {
+            color: $color-primary;
+            &:hover { text-decoration: underline; }
+          }
+          @media (max-width: $scr-tablet) {
+              padding: 15px;
+              white-space: nowrap;
+          }
+      }
+      td { color: #7C7C7C;}
+      th { font-weight: bold; }
+      /* end - tables */
 }
 
 ::-webkit-scrollbar {

@@ -259,8 +259,8 @@ body{
 
       @media (max-width: $scr-mb){
         input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body textarea{
-          padding: 18px 24px;
-          height: 60px;
+          padding: 16px 24px;
+          height: 48px;
         }
         input[type=submit], input[type=button], 
         button, .btn, .cta-button{
@@ -274,9 +274,9 @@ body{
       @media (max-width: 599.98px){
         input[type=submit], input[type=button], 
         button, .btn, .cta-button{
-          min-height: 54px;
+          min-height: 48px;
           min-width: 130px;
-          padding: 16px 24px;
+          padding: 13px 24px;
           font-size: 16px;
         }
       }

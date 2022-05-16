@@ -217,8 +217,8 @@ body {
     font-weight: bold; }
   @media (max-width: 767.98px) {
     body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body body textarea {
-      padding: 18px 24px;
-      height: 60px; }
+      padding: 16px 24px;
+      height: 48px; }
     body input[type=submit], body input[type=button],
     body button, body .btn, body .cta-button {
       min-height: 54px;
@@ -228,9 +228,9 @@ body {
   @media (max-width: 599.98px) {
     body input[type=submit], body input[type=button],
     body button, body .btn, body .cta-button {
-      min-height: 54px;
+      min-height: 48px;
       min-width: 130px;
-      padding: 16px 24px;
+      padding: 13px 24px;
       font-size: 16px; } }
 
 ::-webkit-scrollbar {
@@ -408,8 +408,10 @@ body {
               .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile.active .expanded {
                 display: block; }
           .bonds-wrap-page .menu-col .bonds-menu__nav {
+            max-width: 432px;
+            width: 100%;
+            padding: 0 16px;
             margin-top: 0;
-            width: calc(100% - 128px);
             margin-left: auto;
             margin-right: auto; }
           .bonds-wrap-page .menu-col .bonds-menu__bottom {
@@ -427,8 +429,10 @@ body {
         padding: 20px 16px; }
         .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile {
           right: 16px; }
-      .bonds-wrap-page .menu-col .bonds-menu__nav {
-        width: calc(100% - 32px); }
+      .bonds-wrap-page .menu-col .bonds-menu__nav .item {
+        padding: 11px 19px 10px; }
+        .bonds-wrap-page .menu-col .bonds-menu__nav .item:not(:last-child) {
+          margin-bottom: 12px; }
       .bonds-wrap-page .menu-col .bonds-menu__bottom {
         margin-top: 24px;
         width: calc(100% - 32px); } }
@@ -797,9 +801,10 @@ body {
           .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2:last-child {
             margin-left: 32px; }
         .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field label {
-          left: 16px; }
+          left: 16px;
+          font-size: 13px; }
         .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap {
-          height: 60px; }
+          height: 48px; }
           .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .custom-select {
             padding: 22px 24px;
             display: none; }
@@ -811,7 +816,7 @@ body {
             border-radius: 10px;
             outline: none;
             width: 100%;
-            padding: 21.5px 24px;
+            padding: 15px 24px;
             -moz-appearance: none;
             /* Firefox */
             -webkit-appearance: none;
@@ -830,17 +835,18 @@ body {
           margin-top: 32px; } }
     @media (max-width: 599.98px) {
       .bonds-wrap-page .content-col .top-bar {
-        flex-direction: column;
         align-items: flex-start; }
         .bonds-wrap-page .content-col .top-bar__heading {
-          width: 100%;
-          padding-right: 0; }
+          width: calc(100% - 95px); }
           .bonds-wrap-page .content-col .top-bar__heading h2 {
             font-size: 18px;
             line-height: 24px; }
         .bonds-wrap-page .content-col .top-bar__account {
-          width: 100%;
-          margin-top: 10px; }
+          width: 95px; }
+          .bonds-wrap-page .content-col .top-bar__account--logged {
+            padding: 0; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta {
+              display: none; }
       .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template .manage-job {
         margin-top: 48px; }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field {
@@ -941,7 +947,7 @@ body {
           padding: 12px 24px; } }
   @media (max-width: 599.98px) {
     .first-screen-page {
-      min-height: calc( 100vh - 184px); }
+      min-height: calc( 100vh - 150px); }
       .first-screen-page .notification-popup {
         padding: 24px; }
         .first-screen-page .notification-popup .heading {

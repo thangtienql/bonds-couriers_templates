@@ -171,8 +171,10 @@
                     }
                 }
                 &__nav{
+                    max-width: 432px;
+                    width: 100%;
+                    padding: 0 16px;
                     margin-top: 0;
-                    width: calc(100% - 128px);
                     margin-left: auto;
                     margin-right: auto;
                 }
@@ -200,7 +202,12 @@
                     }
                 }
                 &__nav{
-                    width: calc(100% - 32px);
+                    .item{
+                        padding: 11px 19px 10px;
+                        &:not(:last-child){
+                            margin-bottom: 12px;
+                        }
+                    }
                 }
                 &__bottom{
                     margin-top: 24px;
@@ -683,9 +690,10 @@
                         .bonds-field {
                             label{
                                 left: 16px;
+                                font-size: 13px;
                             }
                             .custom-select-wrap {
-                                height: 60px;
+                                height: 48px;
                                 .custom-select{
                                     padding: 22px 24px;
                                     display: none;
@@ -699,7 +707,7 @@
                                     border-radius: 10px;
                                     outline: none;
                                     width: 100%;
-                                    padding: 21.5px 24px;
+                                    padding: 15px 24px;
         
                                     -moz-appearance:none; /* Firefox */
                                     -webkit-appearance:none; /* Safari and Chrome */
@@ -726,19 +734,22 @@
         }
         @media (max-width: 599.98px){
             .top-bar{
-                flex-direction: column;
                 align-items: flex-start;
                 &__heading {
-                    width: 100%;
-                    padding-right: 0;
+                    width: calc(100% - 95px);
                     h2{
                         font-size: 18px;
                         line-height: 24px;
                     }
                 }
                 &__account{
-                    width: 100%;
-                    margin-top: 10px;
+                    width: 95px;
+                    &--logged {
+                        padding: 0;
+                        .info-user__wrap .meta {
+                            display: none;
+                        }
+                    }
                 }
             }
             .bonds-body-wrap{

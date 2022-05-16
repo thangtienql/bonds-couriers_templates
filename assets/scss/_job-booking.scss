@@ -89,6 +89,7 @@
         }
     }
     @media (max-width: 599.98px){
+        min-height: calc( 100vh - 184px);
         .notification-popup{
             padding: 24px;
             .heading{
@@ -130,14 +131,6 @@
         }
     }
     @media (max-width: 599.98px){
-        .wrap-template .rt-buttons-controls{
-            &.multi {
-                // flex-direction: column;
-                // align-items: center;
-                .cta-button.yellow{
-                    // margin-left: 0;
-                }
-            }
-        }
+        
     }
 }

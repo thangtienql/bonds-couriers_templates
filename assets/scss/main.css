@@ -940,16 +940,18 @@ body {
         .first-screen-page .notification-popup .notes {
           padding: 12px 24px; } }
   @media (max-width: 599.98px) {
-    .first-screen-page .notification-popup {
-      padding: 24px; }
-      .first-screen-page .notification-popup .heading {
-        font-size: 24px;
-        line-height: 32px; }
-      .first-screen-page .notification-popup .content p {
-        margin-bottom: 12px; }
-      .first-screen-page .notification-popup .notes {
-        font-size: 14px;
-        line-height: 18px; } }
+    .first-screen-page {
+      min-height: calc( 100vh - 184px); }
+      .first-screen-page .notification-popup {
+        padding: 24px; }
+        .first-screen-page .notification-popup .heading {
+          font-size: 24px;
+          line-height: 32px; }
+        .first-screen-page .notification-popup .content p {
+          margin-bottom: 12px; }
+        .first-screen-page .notification-popup .notes {
+          font-size: 14px;
+          line-height: 18px; } }
 
 .content-body-booking {
   padding: 13px 0 32px; }

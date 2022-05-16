@@ -1,17 +1,8 @@
 (function( $ ){
 
 $(document).ready( function() {
-    closePopup();
     customSelectBox();
 });
-
-// Function Close Popup
-function closePopup(){
-    $('.popup .ic-close').click( function(e) {
-        e.preventDefault();
-        $(this).parent().hide();
-    });
-}
 
 // Cusom select box to style
 function customSelectBox() {
@@ -67,6 +58,7 @@ function customSelectBox() {
             $custom_select.removeClass('active');
             $list.hide();
         });
+
     });
 }
 

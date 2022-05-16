@@ -10,7 +10,7 @@
     background-repeat: no-repeat;
 
     padding: 110px 0 105px;
-    min-height: 100vh;
+    min-height: calc( 100vh + 100px );
     .notification-popup{
         max-width: 565px;
         margin: 0 auto;
@@ -57,10 +57,58 @@
             margin-top: 50px;
         }
     }
+
+    @media (max-width: 1200.98px){
+        min-height: calc(100vh + 100px );
+    }
+    @media (max-width: $scr-mb){
+        padding: 48px 16px;
+        min-height: calc( 100vh - 150px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .notification-popup {
+            padding: 32px;
+            .notes{
+                margin-top: 24px;
+            }
+            .ic-close{
+                top: 10px;
+                right: 10px;
+            }
+            .heading{
+                font-size: 28px;
+                line-height: 36px;
+            }
+            .content{
+                margin-top: 24px;
+            }
+            .notes{
+                padding: 12px 24px;
+            }
+        }
+    }
+    @media (max-width: 599.98px){
+        .notification-popup{
+            padding: 24px;
+            .heading{
+                font-size: 24px;
+                line-height: 32px;
+            }
+            .content p{
+                margin-bottom: 12px;
+            }
+            .notes{
+                font-size: 14px;
+                line-height: 18px;
+            }
+        }
+    }
+    
 }
 
 .content-body-booking{
-    padding: 13px 0;
+    padding: 13px 0 32px;
 
     .wrap-template{
         .manage-job{
@@ -69,6 +117,26 @@
         .rt-buttons-controls.multi{
             .cta-button.yellow{
                 margin-left: 34px;
+            }
+        }
+    }
+    @media (max-width: $scr-mb){
+        .wrap-template .rt-buttons-controls{
+            &.multi {
+                .cta-button.yellow{
+                    margin-left: 24px;
+                }
+            }
+        }
+    }
+    @media (max-width: 599.98px){
+        .wrap-template .rt-buttons-controls{
+            &.multi {
+                // flex-direction: column;
+                // align-items: center;
+                .cta-button.yellow{
+                    // margin-left: 0;
+                }
             }
         }
     }

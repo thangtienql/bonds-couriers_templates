@@ -23,11 +23,14 @@
                     height: 38px;
                     width: auto;
                 }
+                .toggle-menu-mobile{
+                    display: none;
+                }
             }
 
             &__nav{
                 margin-top: 73px;
-                
+                display: block;
                 .item{
                     display: block;
                     width: 100%;
@@ -110,6 +113,102 @@
 
             }
         }
+
+        @media (max-width: 1200.98px){
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 6;
+            overflow: auto;
+            &.active{
+                height: 100vh;
+                overflow: auto;
+                .bonds-menu{
+                    height: 100%;
+                    justify-content: initial;
+                    overflow-y: auto;
+                    &__bottom{
+                        display: block;
+                    }
+                }
+            }
+            .bonds-menu{
+                min-height: initial;
+                padding: 0;
+                &__nav, &__bottom{
+                    display: none;
+                }
+                &__logo{
+                    position: relative;
+                    padding: 29px 30px 29px;
+                    .toggle-menu-mobile{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+
+                        position: absolute;
+                        top: calc(50% - 16px);
+                        right: 30px;
+                        img{
+                            height: auto;
+                            max-width: 100%;
+                        }
+                        .expanded{
+                            display: none;
+                        }
+                        &.active{
+                            .collapsed{
+                                display: none;
+                            }
+                            .expanded{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                &__nav{
+                    margin-top: 0;
+                    width: calc(100% - 128px);
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &__bottom{
+                    margin-top: 48px;
+                    width: calc(100% - 128px);
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-bottom: 24px;
+                    &__secured, &__tips{
+                        max-width: 400px;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $scr-mb){
+            .bonds-menu{
+                &__logo{
+                    padding: 20px 16px;
+                    .toggle-menu-mobile{
+                        right: 16px;
+                    }
+                }
+                &__nav{
+                    width: calc(100% - 32px);
+                }
+                &__bottom{
+                    margin-top: 24px;
+                    width: calc(100% - 32px);
+                }
+            }
+        }
+
     }
 
     .content-col{
@@ -123,18 +222,28 @@
             padding: 28px 78px 28px 57px;
             background: #FFFFFF;
             box-shadow: 10px 5px 25px 5px rgba(0, 0, 0, 0.04);
-            &__heading h2{
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 28px;
-                color: #11175D;
-                margin: 0;
+            &__heading {
+                width: calc( 100% - 186px );
+                padding-right: 24px;
+                h2{
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 28px;
+                    color: #11175D;
+                    margin: 0;
+                }
             }
 
             &__account{
+                width: 186px;
                 &--login a{
                     min-width: 92px;
+                    min-height: initial;
                     padding: 15px 31px;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 14px;
+                    color: #FFFFFF;
                 }
                 &--logged{
                     display: flex;
@@ -198,9 +307,7 @@
 
         .bonds-body-wrap{
             .wrap-template{
-                max-width: 1054px;
-                padding: 0 16px;
-                margin: 0 auto;
+                padding: 0 67px;
             }
             .bonds-warning{
                 background: #EE1F45;
@@ -323,10 +430,9 @@
                             }
                         }
                         .col-2{
-                            width: calc(100% / 2);
-                            padding-right: 75px;
+                            width: calc(100% / 2 - 37.5px);
                             &:last-child{
-                                padding-right: 0;
+                                margin-left: 75px;
                             }
                         }
                     }
@@ -345,117 +451,342 @@
                             thead th{
                                 color: #000000;
                                 &:first-child{
-                                    padding: 0 15px 24px 16px;
+                                    padding: 0;
+                                    width: 54px;
                                 }
-                            }
-                            tbody tr td{
-                                input[type="checkbox"]{
-                                    display: block;
-                                }
-                                &.select-item{
-                                    .checkbox{
-                                        width: 22px;
-                                        height: 22px;
-                                        border-radius: 5px;
-                                        position: relative;
-                                        input{
-                                            margin: 0;
-                                            width: 22px;
-                                            height: 22px;
-                                            opacity: 0;
-                                            z-index: 3;
-                                            position: relative;
-                                            &:checked{
-                                                background: #294AA2;
-                                            }
-                                        }
-                                        label{
-                                            position: absolute;
-                                            left: 0;
-                                            top: 0;
-                                            z-index: 2;
-                                            &:before{
-                                                width: 22px;
-                                                height: 22px;
-                                                background: transparent;
-                                                border: none;
-                                                margin: 0;
-                                                outline: none;
-                                            }
+                                &#jobStatus{
+                                    cursor: pointer;
+                                    span{
+                                        display: flex;
+                                        align-items: center;
+                                        &:after{
+                                            content: "";
+                                            background-image: url(../images/icons/ic_select.svg);
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: contain;
+                                            width: 12px;
+                                            height: 12px;
+                                            display: block;
+                                            margin-left: 16px;
                                         }
                                     }
                                 }
-                                &.select_permanent{
-                                    .custom-select-wrap{
-                                        position: relative;
-                                        height: 35px;
-                                        width: 127px;
-                                        margin: 0 auto;
-                                        .select-hidden{
-                                            visibility: hidden;
-                                        }
-                                        .custom-select{
-                                            position: absolute;
-                                            background: #294AA2;
-                                            top: 0;
-                                            right: 0;
-                                            bottom: 0;
-                                            left: 0;
-                                            overflow: hidden;
-                                            text-overflow: ellipsis;
-                                            white-space: nowrap;
-                                            display: block;
-                                            vertical-align: middle;
+                            }
+                            tbody tr {
+                                &.clicked{
+                                    background: rgba(194, 209, 217, 0.2);
+                                }
+                                td{
+                                    input[type="checkbox"]{
+                                        display: block;
+                                    }
+                                    &.select-item{
+                                        padding: 0;
+                                        .checkbox{
+                                            width: 22px;
+                                            height: 22px;
                                             border-radius: 5px;
-                                            font-weight: 400;
-                                            font-size: 14px;
-                                            line-height: 16px;
-                                            letter-spacing: 0.1em;
-                                            color: #ffffff;
-                                            padding: 10px 23px;
-                                            text-align: center;
-                                            &:after{
-                                                content: "";
-                                                width: 9px;
-                                                height: 9px;
-                                                background-image: url(../images/icons/select-w.svg);
-                                                background-repeat: no-repeat;
+                                            position: relative;
+                                            margin: 0 auto;
+                                            input{
+                                                margin: 0;
+                                                width: 22px;
+                                                height: 22px;
+                                                opacity: 0;
+                                                z-index: 3;
+                                                position: relative;
+                                                cursor: pointer;
+                                                &:checked~label::before{
+                                                    border-color: #294AA2;
+                                                    background: #294AA2;
+                                                    background-image: url(../images/icons/checked.svg);
+                                                    background-size: 70%;
+                                                    background-repeat: no-repeat;
+                                                    background-position: center;
+                                                }
+                                            }
+                                            label{
                                                 position: absolute;
-                                                background-size: contain;
-                                                top: 14px;
-                                                right: 5px;
-                                                transition: ease .25s all;
+                                                left: 0;
+                                                top: 0;
+                                                z-index: 2;
+                                                &:before{
+                                                    width: 22px;
+                                                    height: 22px;
+                                                    background: transparent;
+                                                    margin: 0;
+                                                    outline: none;
+                                                    border: 1px solid #C2D1D9;
+                                                    border-radius: 5px;
+                                                    cursor: pointer;
+                                                }
                                             }
                                         }
-                                        .options{
-                                            display: none;
-                                            list-style: none;
-                                            margin: 0px;
-                                            padding: 0px;
-                                            position: absolute;
-                                            background: rgb(255, 255, 255);
-                                            width: 100%;
-                                            box-shadow: #00000029 0px 3px 6px;
-                                            z-index: 999;
-                                            top: 30px;
-                                            left: 0;
-                                            li{ 
-                                                cursor: pointer;
-                                                padding: 8px;
+                                    }
+                                    &.job_status{
+                                        color: #000000;
+                                    }
+                                    &.select_permanent{
+                                        .custom-select-wrap{
+                                            position: relative;
+                                            height: 35px;
+                                            width: 127px;
+                                            margin: 0 auto;
+                                            .select-hidden{
+                                                visibility: hidden;
+                                            }
+                                            .custom-select{
+                                                position: absolute;
+                                                background: #294AA2;
+                                                top: 0;
+                                                right: 0;
+                                                bottom: 0;
+                                                left: 0;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                white-space: nowrap;
+                                                display: block;
+                                                vertical-align: middle;
+                                                border-radius: 5px;
                                                 font-weight: 400;
                                                 font-size: 14px;
                                                 line-height: 16px;
                                                 letter-spacing: 0.1em;
-                                                color: #000000;
+                                                color: #ffffff;
+                                                padding: 10px 23px;
+                                                text-align: center;
+                                                cursor: pointer;
+                                                &.changed{
+                                                    background: #F5AF02;
+                                                }
+                                                &:after{
+                                                    content: "";
+                                                    width: 9px;
+                                                    height: 9px;
+                                                    background-image: url(../images/icons/select-w.svg);
+                                                    background-repeat: no-repeat;
+                                                    position: absolute;
+                                                    background-size: contain;
+                                                    top: 14px;
+                                                    right: 5px;
+                                                    transition: ease .25s all;
+                                                }
+                                            }
+                                            .options{
+                                                display: none;
+                                                list-style: none;
+                                                margin: 0px;
+                                                padding: 0px;
+                                                position: absolute;
+                                                background: rgb(255, 255, 255);
+                                                width: 100%;
+                                                box-shadow: #00000029 0px 3px 6px;
+                                                z-index: 999;
+                                                top: 30px;
+                                                left: 0;
+                                                li{ 
+                                                    cursor: pointer;
+                                                    padding: 8px;
+                                                    font-weight: 400;
+                                                    font-size: 14px;
+                                                    line-height: 16px;
+                                                    letter-spacing: 0.1em;
+                                                    color: #000000;
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                &.remove-item{
-                                    text-align: center;
+                                    &.remove-item{
+                                        text-align: center;
+                                        &.hide a{
+                                            opacity: 0;
+                                            visibility: hidden;
+                                        }
+                                        img{
+                                            min-width: 24px;
+                                            width: 24px;
+                                            height: 24px;
+                                            object-fit: cover;
+                                        }
+                                    }
                                 }
                             }
                         }
+                    }
+
+                    .st-bonds-buttons{
+                        display: flex;
+                        margin-top: 56px;
+                        a:not(:first-child){
+                            margin-left: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1200.98px){
+            width: 100%;
+            padding-top: 100px;
+            .top-bar{
+                padding: 12px 29px;
+            }
+            .bonds-body-wrap {
+                .bonds-warning{
+                    padding: 14.5px 29px;
+                }
+                .wrap-template{
+                    padding: 0 29px;
+                    .manage-job{
+                        margin-top: 56px;
+                    }
+                }
+                form .template-form .col-two-field{
+                    margin-top: 32px;
+                    .col-2{
+                        width: calc(100% / 2 - 25px);
+                        &:last-child{
+                            margin-left: 50px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $scr-sm-tablet){
+            .bonds-body-wrap {
+                .bonds-warning{padding: 12px 16px;}
+                form .template-form .col-two-field {
+                    .bonds-field label{
+                        padding: 0 8px;
+                    }
+                }
+            }
+        }
+        @media (max-width: $scr-mb){
+            padding-top: 82px;
+            .top-bar{ 
+                padding: 12px 16px;
+            }
+            .bonds-body-wrap {
+                .wrap-template{
+                    padding: 0 16px;
+                }
+                form .template-form {
+                    .col-two-field {
+                        .col-2{
+                            width: calc(100% / 2 - 16px);
+                            &:last-child{
+                                margin-left: 32px;
+                            }
+                        }
+                        .bonds-field {
+                            label{
+                                left: 16px;
+                            }
+                            .custom-select-wrap {
+                                height: 60px;
+                                .custom-select{
+                                    padding: 22px 24px;
+                                    display: none;
+                                    &:after{
+                                        top: 24px;
+                                    }
+                                }
+                                .select-hidden{
+                                    visibility: visible;
+                                    border: 1px solid #294AA2;
+                                    border-radius: 10px;
+                                    outline: none;
+                                    width: 100%;
+                                    padding: 21.5px 24px;
+        
+                                    -moz-appearance:none; /* Firefox */
+                                    -webkit-appearance:none; /* Safari and Chrome */
+                                    appearance:none;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    font-weight: 400;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+        
+                                    background-image: url(../images/icons/ic_select.svg);
+                                    background-repeat: no-repeat;
+                                    background-position: 95% center;
+                                    background-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                    .st-bonds-buttons{
+                        margin-top: 32px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 599.98px){
+            .top-bar{
+                flex-direction: column;
+                align-items: flex-start;
+                &__heading {
+                    width: 100%;
+                    padding-right: 0;
+                    h2{
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+                &__account{
+                    width: 100%;
+                    margin-top: 10px;
+                }
+            }
+            .bonds-body-wrap{
+                .wrap-template .manage-job{
+                    margin-top: 48px;
+                }
+                form {
+                    .template-form .col-two-field{
+                        flex-direction: column;
+                        .col-2{
+                            width: 100%;
+                            &:last-child{
+                                margin-left: 0;
+                                margin-top: 32px;
+                            }
+                        }
+                    }
+                    .st-bonds-buttons a{
+                        &:not(:first-child){
+                            margin-left: 24px;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 424.98px){
+            .bonds-body-wrap {
+                form {
+                    .template-form {
+                        .rt-buttons-controls{
+                            margin-top: 24px;
+                            &.multi{
+                                flex-direction: column;
+                                align-items: flex-start;
+                                .cta-button.yellow{
+                                    margin-left: 0;
+                                    margin-top: 16px;
+                                }
+                            }
+                        }
+                        .st-bonds-buttons a{
+                            &:not(:first-child){
+                                margin-left: 24px;
+                            }
+                        }
+                    }
+                    .template-view{
+                        margin-top: 48px;
                     }
                 }
             }

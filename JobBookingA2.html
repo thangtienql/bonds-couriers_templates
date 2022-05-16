@@ -11,6 +11,7 @@
 
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/global.js"></script>
+    <script src="./assets/js/bonds-common.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,13 @@
                 <!-- Start - Member menu at left column -->
                 <div class="bonds-menu">
                     <div class="bonds-menu__logo">
-                        <img src="./assets/images/logo.svg" alt="logo">
+                        <a href="JobBooking.html">
+                            <img src="./assets/images/logo.svg" alt="logo">
+                        </a>
+                        <span class="toggle-menu-mobile">
+                            <img class="collapsed" src="assets/images/icons/menu-toggle.svg" alt="">
+                            <img class="expanded" src="assets/images/icons/menu-toggle-close.svg" alt="">
+                        </span>
                     </div>
 
                     <div class="bonds-menu__nav">
@@ -46,12 +53,8 @@
                             <img class="icon" src="assets/images/icons/alert.svg" alt="alert">
                             <h4 class="title">Help Tips</h4>
                             <div class="content">
-                                <p>To receive a POD via e-mail when the job is delivered enter your e-mail address/es in
-                                    the
-                                    field at the right.</p>
-                                <p>If you wish to receive a POD for ALL deliveries, then phone us and save yourself the
-                                    trouble
-                                    of typing your email address/es every time you book a job.</p>
+                                <p>Check the “Daily Totals” tickbox at right if you want the enquiry result table to
+                                    display a subtotal of each days charges. </p>
                             </div>
                         </div>
                     </div>
@@ -145,18 +148,18 @@
                                     </div>
 
                                     <div class="rt-buttons-controls multi">
-                                        <div class="button-submit">
+                                        <div class="button-submit not-shadow">
                                             <input class="cta-button blue" type="submit" value="Add to Job">
                                         </div>
-                                        <a class="cta-button yellow" href="#">Manage emails/phone..</a>
+                                        <a class="cta-button yellow not-shadow" href="Javascript:;">Manage emails/phone..</a>
                                     </div>
 
-                                    <div class="template-view">
+                                    <div class="template-view responsive-table">
                                         <table>
                                             <thead>
                                                 <tr>
                                                     <th></th>
-                                                    <th>Job Status</th>
+                                                    <th id="jobStatus"><span>Job Status</span></th>
                                                     <th>Email / SMS</th>
                                                     <th class="heading">Permanent</th>
                                                     <th></th>
@@ -167,10 +170,10 @@
                                                     <td class="select-item">
                                                         <div class="checkbox">
                                                             <input type="checkbox">
-                                                            <!-- <label></label> -->
+                                                            <label></label>
                                                         </div>
                                                     </td>
-                                                    <td class="job_status">POD</td>
+                                                    <td class="job_status"><b>POD</b></td>
                                                     <td>joshc@bondstg.com.au</td>
                                                     <td class="select_permanent">
                                                         <select class="select-hidden" name="eBook[0][bond_permanent]">
@@ -178,8 +181,52 @@
                                                             <option value="permanent">Permanent</option>
                                                         </select>
                                                     </td>
-                                                    <td class="remove-item">
-                                                        <a href="#">
+                                                    <td class="remove-item hide">
+                                                        <a href="Javascript:;">
+                                                            <img src="./assets/images/icons/remove_item.svg">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="select-item">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="job_status"><b>POD</b></td>
+                                                    <td>01937773942</td>
+                                                    <td class="select_permanent">
+                                                        <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <option value="n/a" selected>N/A</option>
+                                                            <option value="permanent">Permanent</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="remove-item hide">
+                                                        <a href="Javascript:;">
+                                                            <img src="./assets/images/icons/remove_item.svg">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="select-item">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <label></label>
+                                                        </div>
+                                                    </td>
+                                                    <td class="job_status"><b>Picked Up</b></td>
+                                                    <td>nathanc@bondstg.com.au</td>
+                                                    <td class="select_permanent">
+                                                        <select class="select-hidden" name="eBook[0][bond_permanent]">
+                                                            <option value="n/a" selected>N/A</option>
+                                                            <option value="permanent">Permanent</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="remove-item hide">
+                                                        <a href="Javascript:;#">
                                                             <img src="./assets/images/icons/remove_item.svg">
                                                         </a>
                                                     </td>
@@ -187,6 +234,12 @@
                                             </tbody>
                                         </table>
                                     </div>
+
+                                    <div class="st-bonds-buttons">
+                                        <a class="cta-button st-prev yellow" href="Javascript:;">Back</a>
+                                        <a class="cta-button st-next" href="Javascript:;">Continue</a>
+                                    </div>
+
                                 </div>
                             </form>
                         </div>

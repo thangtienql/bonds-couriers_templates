@@ -6,6 +6,9 @@ body{
     font-size: 14px;
     font-weight: 400;
     line-height: 125%;
+    &.overflow-hidden{
+      overflow: hidden;
+    }
     * {
         box-sizing: border-box;
     }
@@ -115,6 +118,11 @@ body{
           font-weight: bold;
           padding: 19px 30.5px 20px;
           text-decoration: none;
+          &.not-shadow{
+            &:after{
+              display: none;
+            }
+          }
       }
       input[type=submit], input[type=button], button {
           -webkit-appearance: none;
@@ -127,6 +135,7 @@ body{
 
       .button-submit{
           position: relative;
+          z-index: 1;
           &:after{
             content: "";
             width: calc(100% - 30px);
@@ -137,11 +146,15 @@ body{
             left: 15px;
             background: rgba(25, 63, 246, 0.35);
             z-index: -1;
-        }
+          }
+          &.not-shadow{
+            &:after{ display: none; }
+          }
       }
 
       .cta-button{
             position: relative;
+            z-index: 1;
             &:after{
                 content: "";
                 width: calc(100% - 30px);
@@ -169,8 +182,11 @@ body{
 
       /* start - tables */
     .template-view{
+        &.responsive-table{
+          overflow-x: auto;
+        }
         @media (max-width: $scr-tablet){
-          table{
+          &.responsive-table table{
             min-width: 700px;
           }
         }
@@ -205,12 +221,17 @@ body{
       }
       tr {
           &:nth-child(2n) {
-            background: rgba(129, 3, 82, 0.09);
+            // background: rgba(129, 3, 82, 0.09);
             // box-shadow: rgba(0, 0, 0, 0.16) 0 1px 3px;
           }
           th{
             white-space: nowrap;
           }
+      }
+      tbody tr{
+        &:hover{
+          background: rgba(194, 209, 217, 0.2);
+        }
       }
       td, th {
             text-align: left;
@@ -221,6 +242,7 @@ body{
           line-height: 16px;
           letter-spacing: 0.1em;
           color: #7C7C7C;
+          border-bottom: 0.5px solid #C2D1D9;
           b { font-weight: 900; }
           a {
             color: $color-primary;
@@ -234,6 +256,30 @@ body{
       td { color: #7C7C7C;}
       th { font-weight: bold; }
       /* end - tables */
+
+      @media (max-width: $scr-mb){
+        input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body textarea{
+          padding: 18px 24px;
+          height: 60px;
+        }
+        input[type=submit], input[type=button], 
+        button, .btn, .cta-button{
+          min-height: 54px;
+          min-width: 190px;
+          padding: 16px 24px;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 599.98px){
+        input[type=submit], input[type=button], 
+        button, .btn, .cta-button{
+          min-height: 54px;
+          min-width: 130px;
+          padding: 16px 24px;
+          font-size: 16px;
+        }
+      }
 }
 
 ::-webkit-scrollbar {

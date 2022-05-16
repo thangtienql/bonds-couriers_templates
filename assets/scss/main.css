@@ -14,6 +14,8 @@ body {
   /* end - style button submit */
   /* start - tables */
   /* end - tables */ }
+  body.overflow-hidden {
+    overflow: hidden; }
   body * {
     box-sizing: border-box; }
   body strong, body b {
@@ -116,6 +118,9 @@ body {
     font-weight: bold;
     padding: 19px 30.5px 20px;
     text-decoration: none; }
+    body input[type=submit].not-shadow:after, body input[type=button].not-shadow:after,
+    body button.not-shadow:after, body .btn.not-shadow:after, body .cta-button.not-shadow:after {
+      display: none; }
   body input[type=submit], body input[type=button], body button {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -124,7 +129,8 @@ body {
     box-shadow: none;
     cursor: pointer; }
   body .button-submit {
-    position: relative; }
+    position: relative;
+    z-index: 1; }
     body .button-submit:after {
       content: "";
       width: calc(100% - 30px);
@@ -135,8 +141,11 @@ body {
       left: 15px;
       background: rgba(25, 63, 246, 0.35);
       z-index: -1; }
+    body .button-submit.not-shadow:after {
+      display: none; }
   body .cta-button {
-    position: relative; }
+    position: relative;
+    z-index: 1; }
     body .cta-button:after {
       content: "";
       width: calc(100% - 30px);
@@ -154,8 +163,10 @@ body {
       background: #294AA2; }
       body .cta-button.blue:after {
         background: rgba(25, 63, 246, 0.35); }
+  body .template-view.responsive-table {
+    overflow-x: auto; }
   @media (max-width: 1024px) {
-    body .template-view table {
+    body .template-view.responsive-table table {
       min-width: 700px; } }
   body table {
     border-collapse: separate;
@@ -176,10 +187,10 @@ body {
       border-bottom: 0.5px solid #C2D1D9; }
       body table thead tr th.heading {
         text-align: center; }
-  body tr:nth-child(2n) {
-    background: rgba(129, 3, 82, 0.09); }
   body tr th {
     white-space: nowrap; }
+  body tbody tr:hover {
+    background: rgba(194, 209, 217, 0.2); }
   body td, body th {
     text-align: left;
     vertical-align: middle;
@@ -188,7 +199,8 @@ body {
     font-weight: 400;
     line-height: 16px;
     letter-spacing: 0.1em;
-    color: #7C7C7C; }
+    color: #7C7C7C;
+    border-bottom: 0.5px solid #C2D1D9; }
     body td b, body th b {
       font-weight: 900; }
     body td a, body th a {
@@ -203,6 +215,23 @@ body {
     color: #7C7C7C; }
   body th {
     font-weight: bold; }
+  @media (max-width: 767.98px) {
+    body input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body body textarea {
+      padding: 18px 24px;
+      height: 60px; }
+    body input[type=submit], body input[type=button],
+    body button, body .btn, body .cta-button {
+      min-height: 54px;
+      min-width: 190px;
+      padding: 16px 24px;
+      font-size: 16px; } }
+  @media (max-width: 599.98px) {
+    body input[type=submit], body input[type=button],
+    body button, body .btn, body .cta-button {
+      min-height: 54px;
+      min-width: 130px;
+      padding: 16px 24px;
+      font-size: 16px; } }
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -268,8 +297,11 @@ body {
         .bonds-wrap-page .menu-col .bonds-menu__logo img {
           height: 38px;
           width: auto; }
+        .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile {
+          display: none; }
       .bonds-wrap-page .menu-col .bonds-menu__nav {
-        margin-top: 73px; }
+        margin-top: 73px;
+        display: block; }
         .bonds-wrap-page .menu-col .bonds-menu__nav .item {
           display: block;
           width: 100%;
@@ -331,6 +363,75 @@ body {
               margin-bottom: 16px; }
               .bonds-wrap-page .menu-col .bonds-menu__bottom__tips .content p:last-child {
                 margin-bottom: 0; }
+    @media (max-width: 1200.98px) {
+      .bonds-wrap-page .menu-col {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 6;
+        overflow: auto; }
+        .bonds-wrap-page .menu-col.active {
+          height: 100vh;
+          overflow: auto; }
+          .bonds-wrap-page .menu-col.active .bonds-menu {
+            height: 100%;
+            justify-content: initial;
+            overflow-y: auto; }
+            .bonds-wrap-page .menu-col.active .bonds-menu__bottom {
+              display: block; }
+        .bonds-wrap-page .menu-col .bonds-menu {
+          min-height: initial;
+          padding: 0; }
+          .bonds-wrap-page .menu-col .bonds-menu__nav, .bonds-wrap-page .menu-col .bonds-menu__bottom {
+            display: none; }
+          .bonds-wrap-page .menu-col .bonds-menu__logo {
+            position: relative;
+            padding: 29px 30px 29px; }
+            .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 32px;
+              height: 32px;
+              cursor: pointer;
+              position: absolute;
+              top: calc(50% - 16px);
+              right: 30px; }
+              .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile img {
+                height: auto;
+                max-width: 100%; }
+              .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile .expanded {
+                display: none; }
+              .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile.active .collapsed {
+                display: none; }
+              .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile.active .expanded {
+                display: block; }
+          .bonds-wrap-page .menu-col .bonds-menu__nav {
+            margin-top: 0;
+            width: calc(100% - 128px);
+            margin-left: auto;
+            margin-right: auto; }
+          .bonds-wrap-page .menu-col .bonds-menu__bottom {
+            margin-top: 48px;
+            width: calc(100% - 128px);
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 24px; }
+            .bonds-wrap-page .menu-col .bonds-menu__bottom__secured, .bonds-wrap-page .menu-col .bonds-menu__bottom__tips {
+              max-width: 400px;
+              margin-left: auto;
+              margin-right: auto; } }
+    @media (max-width: 767.98px) {
+      .bonds-wrap-page .menu-col .bonds-menu__logo {
+        padding: 20px 16px; }
+        .bonds-wrap-page .menu-col .bonds-menu__logo .toggle-menu-mobile {
+          right: 16px; }
+      .bonds-wrap-page .menu-col .bonds-menu__nav {
+        width: calc(100% - 32px); }
+      .bonds-wrap-page .menu-col .bonds-menu__bottom {
+        margin-top: 24px;
+        width: calc(100% - 32px); } }
   .bonds-wrap-page .content-col {
     width: calc(100% - 280px); }
     .bonds-wrap-page .content-col .top-bar {
@@ -340,66 +441,74 @@ body {
       padding: 28px 78px 28px 57px;
       background: #FFFFFF;
       box-shadow: 10px 5px 25px 5px rgba(0, 0, 0, 0.04); }
-      .bonds-wrap-page .content-col .top-bar__heading h2 {
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 28px;
-        color: #11175D;
-        margin: 0; }
-      .bonds-wrap-page .content-col .top-bar__account--login a {
-        min-width: 92px;
-        padding: 15px 31px; }
-      .bonds-wrap-page .content-col .top-bar__account--logged {
-        display: flex;
-        align-items: center;
-        padding: 6px 0px; }
-        .bonds-wrap-page .content-col .top-bar__account--logged .notification {
-          position: relative;
-          width: 32px;
-          height: 32px; }
-          .bonds-wrap-page .content-col .top-bar__account--logged .notification .new-notifi {
-            width: 8px;
-            height: 8px;
-            position: absolute;
-            top: 0;
-            left: 0; }
-        .bonds-wrap-page .content-col .top-bar__account--logged .info-user {
+      .bonds-wrap-page .content-col .top-bar__heading {
+        width: calc( 100% - 186px );
+        padding-right: 24px; }
+        .bonds-wrap-page .content-col .top-bar__heading h2 {
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 28px;
+          color: #11175D;
+          margin: 0; }
+      .bonds-wrap-page .content-col .top-bar__account {
+        width: 186px; }
+        .bonds-wrap-page .content-col .top-bar__account--login a {
+          min-width: 92px;
+          min-height: initial;
+          padding: 15px 31px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 14px;
+          color: #FFFFFF; }
+        .bonds-wrap-page .content-col .top-bar__account--logged {
           display: flex;
           align-items: center;
-          padding-left: 12px; }
-          .bonds-wrap-page .content-col .top-bar__account--logged .info-user .thumb-user {
-            width: 32px;
-            height: 32px;
-            display: block; }
-          .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap {
-            padding-left: 9px;
+          padding: 6px 0px; }
+          .bonds-wrap-page .content-col .top-bar__account--logged .notification {
             position: relative;
-            display: flex;
-            align-items: center;
-            cursor: default; }
-            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta {
-              padding-right: 22px; }
-              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .name {
-                font-weight: 700;
-                font-size: 12px;
-                line-height: 14px;
-                color: #000000; }
-              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .company {
-                font-weight: 400;
-                font-size: 10px;
-                line-height: 12px;
-                color: #C4C4C4;
-                margin-top: 1px; }
-            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .toggle-info {
+            width: 32px;
+            height: 32px; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .notification .new-notifi {
               width: 8px;
               height: 8px;
+              position: absolute;
+              top: 0;
+              left: 0; }
+          .bonds-wrap-page .content-col .top-bar__account--logged .info-user {
+            display: flex;
+            align-items: center;
+            padding-left: 12px; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .info-user .thumb-user {
+              width: 32px;
+              height: 32px;
+              display: block; }
+            .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap {
+              padding-left: 9px;
+              position: relative;
               display: flex;
               align-items: center;
-              justify-content: center; }
+              cursor: default; }
+              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta {
+                padding-right: 22px; }
+                .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .name {
+                  font-weight: 700;
+                  font-size: 12px;
+                  line-height: 14px;
+                  color: #000000; }
+                .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .meta .company {
+                  font-weight: 400;
+                  font-size: 10px;
+                  line-height: 12px;
+                  color: #C4C4C4;
+                  margin-top: 1px; }
+              .bonds-wrap-page .content-col .top-bar__account--logged .info-user__wrap .toggle-info {
+                width: 8px;
+                height: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center; }
     .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template {
-      max-width: 1054px;
-      padding: 0 16px;
-      margin: 0 auto; }
+      padding: 0 67px; }
     .bonds-wrap-page .content-col .bonds-body-wrap .bonds-warning {
       background: #EE1F45;
       padding: 14.5px 57px;
@@ -504,10 +613,9 @@ body {
                 background: #294AA2;
                 color: #ffffff; }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2 {
-        width: calc(100% / 2);
-        padding-right: 75px; }
+        width: calc(100% / 2 - 37.5px); }
         .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2:last-child {
-          padding-right: 0; }
+          margin-left: 75px; }
     .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .rt-buttons-controls {
       margin-top: 36px; }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .rt-buttons-controls.multi {
@@ -518,35 +626,66 @@ body {
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table thead th {
         color: #000000; }
         .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table thead th:first-child {
-          padding: 0 15px 24px 16px; }
+          padding: 0;
+          width: 54px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table thead th#jobStatus {
+          cursor: pointer; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table thead th#jobStatus span {
+            display: flex;
+            align-items: center; }
+            .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table thead th#jobStatus span:after {
+              content: "";
+              background-image: url(../images/icons/ic_select.svg);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: contain;
+              width: 12px;
+              height: 12px;
+              display: block;
+              margin-left: 16px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr.clicked {
+        background: rgba(194, 209, 217, 0.2); }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td input[type="checkbox"] {
         display: block; }
-      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox {
-        width: 22px;
-        height: 22px;
-        border-radius: 5px;
-        position: relative; }
-        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox input {
-          margin: 0;
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item {
+        padding: 0; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox {
           width: 22px;
           height: 22px;
-          opacity: 0;
-          z-index: 3;
-          position: relative; }
-          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox input:checked {
-            background: #294AA2; }
-        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox label {
-          position: absolute;
-          left: 0;
-          top: 0;
-          z-index: 2; }
-          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox label:before {
+          border-radius: 5px;
+          position: relative;
+          margin: 0 auto; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox input {
+            margin: 0;
             width: 22px;
             height: 22px;
-            background: transparent;
-            border: none;
-            margin: 0;
-            outline: none; }
+            opacity: 0;
+            z-index: 3;
+            position: relative;
+            cursor: pointer; }
+            .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox input:checked ~ label::before {
+              border-color: #294AA2;
+              background: #294AA2;
+              background-image: url(../images/icons/checked.svg);
+              background-size: 70%;
+              background-repeat: no-repeat;
+              background-position: center; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2; }
+            .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select-item .checkbox label:before {
+              width: 22px;
+              height: 22px;
+              background: transparent;
+              margin: 0;
+              outline: none;
+              border: 1px solid #C2D1D9;
+              border-radius: 5px;
+              cursor: pointer; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.job_status {
+        color: #000000; }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select_permanent .custom-select-wrap {
         position: relative;
         height: 35px;
@@ -573,7 +712,10 @@ body {
           letter-spacing: 0.1em;
           color: #ffffff;
           padding: 10px 23px;
-          text-align: center; }
+          text-align: center;
+          cursor: pointer; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select_permanent .custom-select-wrap .custom-select.changed {
+            background: #F5AF02; }
           .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.select_permanent .custom-select-wrap .custom-select:after {
             content: "";
             width: 9px;
@@ -607,6 +749,122 @@ body {
             color: #000000; }
       .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.remove-item {
         text-align: center; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.remove-item.hide a {
+          opacity: 0;
+          visibility: hidden; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .template-view table tbody tr td.remove-item img {
+          min-width: 24px;
+          width: 24px;
+          height: 24px;
+          object-fit: cover; }
+    .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .st-bonds-buttons {
+      display: flex;
+      margin-top: 56px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .st-bonds-buttons a:not(:first-child) {
+        margin-left: 34px; }
+    @media (max-width: 1200.98px) {
+      .bonds-wrap-page .content-col {
+        width: 100%;
+        padding-top: 100px; }
+        .bonds-wrap-page .content-col .top-bar {
+          padding: 12px 29px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap .bonds-warning {
+          padding: 14.5px 29px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template {
+          padding: 0 29px; }
+          .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template .manage-job {
+            margin-top: 56px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field {
+          margin-top: 32px; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2 {
+            width: calc(100% / 2 - 25px); }
+            .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2:last-child {
+              margin-left: 50px; } }
+    @media (max-width: 992px) {
+      .bonds-wrap-page .content-col .bonds-body-wrap .bonds-warning {
+        padding: 12px 16px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field label {
+        padding: 0 8px; } }
+    @media (max-width: 767.98px) {
+      .bonds-wrap-page .content-col {
+        padding-top: 82px; }
+        .bonds-wrap-page .content-col .top-bar {
+          padding: 12px 16px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template {
+          padding: 0 16px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2 {
+          width: calc(100% / 2 - 16px); }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2:last-child {
+            margin-left: 32px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field label {
+          left: 16px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap {
+          height: 60px; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .custom-select {
+            padding: 22px 24px;
+            display: none; }
+            .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .custom-select:after {
+              top: 24px; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .select-hidden {
+            visibility: visible;
+            border: 1px solid #294AA2;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+            padding: 21.5px 24px;
+            -moz-appearance: none;
+            /* Firefox */
+            -webkit-appearance: none;
+            /* Safari and Chrome */
+            appearance: none;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: #000000;
+            background-image: url(../images/icons/ic_select.svg);
+            background-repeat: no-repeat;
+            background-position: 95% center;
+            background-size: 12px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .st-bonds-buttons {
+          margin-top: 32px; } }
+    @media (max-width: 599.98px) {
+      .bonds-wrap-page .content-col .top-bar {
+        flex-direction: column;
+        align-items: flex-start; }
+        .bonds-wrap-page .content-col .top-bar__heading {
+          width: 100%;
+          padding-right: 0; }
+          .bonds-wrap-page .content-col .top-bar__heading h2 {
+            font-size: 18px;
+            line-height: 24px; }
+        .bonds-wrap-page .content-col .top-bar__account {
+          width: 100%;
+          margin-top: 10px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap .wrap-template .manage-job {
+        margin-top: 48px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field {
+        flex-direction: column; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2 {
+          width: 100%; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .col-2:last-child {
+            margin-left: 0;
+            margin-top: 32px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .st-bonds-buttons a:not(:first-child) {
+        margin-left: 24px; } }
+    @media (max-width: 424.98px) {
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .rt-buttons-controls {
+        margin-top: 24px; }
+        .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .rt-buttons-controls.multi {
+          flex-direction: column;
+          align-items: flex-start; }
+          .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .rt-buttons-controls.multi .cta-button.yellow {
+            margin-left: 0;
+            margin-top: 16px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .st-bonds-buttons a:not(:first-child) {
+        margin-left: 24px; }
+      .bonds-wrap-page .content-col .bonds-body-wrap form .template-view {
+        margin-top: 48px; } }
 
 /* Fonts */
 /* Color */
@@ -617,7 +875,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   padding: 110px 0 105px;
-  min-height: 100vh; }
+  min-height: calc( 100vh + 100px ); }
   .first-screen-page .notification-popup {
     max-width: 565px;
     margin: 0 auto;
@@ -657,12 +915,50 @@ body {
       text-align: center;
       color: #294AA2;
       margin-top: 50px; }
+  @media (max-width: 1200.98px) {
+    .first-screen-page {
+      min-height: calc(100vh + 100px ); } }
+  @media (max-width: 767.98px) {
+    .first-screen-page {
+      padding: 48px 16px;
+      min-height: calc( 100vh - 150px);
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .first-screen-page .notification-popup {
+        padding: 32px; }
+        .first-screen-page .notification-popup .notes {
+          margin-top: 24px; }
+        .first-screen-page .notification-popup .ic-close {
+          top: 10px;
+          right: 10px; }
+        .first-screen-page .notification-popup .heading {
+          font-size: 28px;
+          line-height: 36px; }
+        .first-screen-page .notification-popup .content {
+          margin-top: 24px; }
+        .first-screen-page .notification-popup .notes {
+          padding: 12px 24px; } }
+  @media (max-width: 599.98px) {
+    .first-screen-page .notification-popup {
+      padding: 24px; }
+      .first-screen-page .notification-popup .heading {
+        font-size: 24px;
+        line-height: 32px; }
+      .first-screen-page .notification-popup .content p {
+        margin-bottom: 12px; }
+      .first-screen-page .notification-popup .notes {
+        font-size: 14px;
+        line-height: 18px; } }
 
 .content-body-booking {
-  padding: 13px 0; }
+  padding: 13px 0 32px; }
   .content-body-booking .wrap-template .manage-job {
     margin-top: 80px; }
   .content-body-booking .wrap-template .rt-buttons-controls.multi .cta-button.yellow {
     margin-left: 34px; }
+  @media (max-width: 767.98px) {
+    .content-body-booking .wrap-template .rt-buttons-controls.multi .cta-button.yellow {
+      margin-left: 24px; } }
 
 /*# sourceMappingURL=main.css.map */

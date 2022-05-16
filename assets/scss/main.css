@@ -154,7 +154,8 @@ body {
       position: absolute;
       top: 11px;
       left: 15px;
-      z-index: -1; }
+      z-index: -1;
+      background: rgba(25, 63, 246, 0.35); }
     body .cta-button.yellow {
       background: #F5AF02; }
       body .cta-button.yellow:after {

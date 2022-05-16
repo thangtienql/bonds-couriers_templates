@@ -555,7 +555,8 @@ body {
           width: 100%; }
           .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .select-hidden {
             visibility: hidden;
-            padding-right: 10px; }
+            padding-right: 10px;
+            background: #FFFFFF; }
           .bonds-wrap-page .content-col .bonds-body-wrap form .template-form .col-two-field .bonds-field .custom-select-wrap .custom-select {
             position: absolute;
             top: 0;

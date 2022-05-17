@@ -316,17 +316,20 @@
             .wrap-template{
                 padding: 0 67px;
             }
-            .bonds-warning{
-                background: #EE1F45;
-                padding: 14.5px 57px;
-                font-weight: 700;
-                font-size: 14px;
-                line-height: 16px;
-                color: #FFFFFF;
-            }
-
             form{
                 .template-form{
+                    .bonds-warning{
+                        background: #EE1F45;
+                        padding: 14.5px 57px;
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 16px;
+                        color: #FFFFFF;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                    }
                     .title{
                         font-weight: 700;
                         font-size: 18px;
@@ -337,110 +340,165 @@
                         margin-top: 53px;
                         display: flex;
                         flex-wrap: wrap;
-                        .bonds-field {
+                        .col-2{
+                            width: calc(100% / 2 - 37.5px);
+                            &:last-child{
+                                margin-left: 75px;
+                            }
+                        }
+                    }
+                    .col-multi-field{
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin: -24px -37.5px;
+                        padding-top: 53px;
+                        .bonds-field{
+                            width: calc(50% - 75px);
+                            margin: 24px 37.5px;
+                        }
+                    }
+
+                    .bonds-field {
+                        position: relative;
+                        &.single{
+                            max-width: 408px;
+                            margin-top: 53px;
+                            &--m{
+                                max-width: 475px;
+                                margin-top: 43px;
+                            }
+                        }
+                        &.radio label{
+                            position: inherit;
+                            left: inherit;
+                            top: inherit;
+                            padding: inherit;
+                        }
+                        label{
+                            font-weight: 400;
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: 0.1em;
+                            color: #000000;
+                            position: absolute;
+                            left: 35px;
+                            top: -7px;
+                            background: #ffffff;
+                            padding: 0 15px;
+                            z-index: 2;
+                        }
+                        .text-status{
+                            font-weight: 400;
+                            font-size: 10px;
+                            line-height: 12px;
+                            letter-spacing: 0.1em;
+                            color: #000000;
+                            margin: 0;
+                            position: absolute;
+                            bottom: -18px;
+                            left: 0;
+                        }
+                        .des-field{
+                            ul {
+                                padding-left: 24px;
+                                margin: 24px 0 0;
+                                li{
+                                    font-weight: 400;
+                                    font-size: 13.7604px;
+                                    line-height: 22px;
+                                    letter-spacing: 0.1em;
+                                    color: #000000;
+                                }
+                            }
+                        }
+                        .custom-select-wrap{
+                            cursor: pointer;
+                            display: inline-block;
                             position: relative;
-                            label{
+                            font-size: 14px;
+                            line-height: 16px;
+                            letter-spacing: 0.1em;
+                            color: #000000;
+                            height: 73px;
+                            width: 100%;
+
+                            .select-hidden{
+                                visibility: hidden;
+                                padding-right: 10px;
+                                background: #FFFFFF;
+                            }
+                            .custom-select{
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                                left: 0;
+                                border: 1px solid $color-primary;
+                                background: #fff;
+                                border-radius: 10px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                display: block;
+                                vertical-align: middle;
+                                padding: 28px 50px;
                                 font-weight: 400;
                                 font-size: 14px;
                                 line-height: 16px;
                                 letter-spacing: 0.1em;
                                 color: #000000;
-                                position: absolute;
-                                left: 35px;
-                                top: -7px;
-                                background: #ffffff;
-                                padding: 0 15px;
-                                z-index: 2;
-                            }
-                            .custom-select-wrap{
-                                cursor: pointer;
-                                display: inline-block;
-                                position: relative;
-                                font-size: 14px;
-                                line-height: 16px;
-                                letter-spacing: 0.1em;
-                                color: #000000;
-                                height: 73px;
-                                width: 100%;
 
-                                .select-hidden{
-                                    visibility: hidden;
-                                    padding-right: 10px;
-                                    background: #FFFFFF;
-                                }
-                                .custom-select{
+                                &:after{
+                                    content: "";
+                                    width: 12px;
+                                    height: 12px;
+                                    background-image: url(../images/icons/ic_select.svg);
+                                    background-repeat: no-repeat;
                                     position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                    bottom: 0;
-                                    left: 0;
-                                    border: 1px solid $color-primary;
-                                    background: #fff;
-                                    border-radius: 10px;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                    white-space: nowrap;
-                                    display: block;
-                                    vertical-align: middle;
-                                    padding: 28px 50px;
+                                    background-size: contain;
+                                    top: 30px;
+                                    right: 24px;
+                                    transition: ease .25s all;
+                                }
+                            }
+                            .options{
+                                display: none;
+                                position: absolute;
+                                top: 56px;
+                                right: 12px;
+                                left: 12px;
+                                width: calc(100% - 24px);
+                                z-index: 999;
+                                margin: 0;
+                                padding: 0;
+                                list-style: none;
+                                border: 1px solid #fbfbfb;
+                                background-color: #fff;
+                                box-shadow: #00000029 0 3px 6px;
+                                li{
+                                    margin: 0;
+                                    padding: 12px 22px;
+                                    border-bottom: 1px solid rgba(112,112,112,.11);
                                     font-weight: 400;
                                     font-size: 14px;
                                     line-height: 16px;
                                     letter-spacing: 0.1em;
                                     color: #000000;
-
-                                    &:after{
-                                        content: "";
-                                        width: 12px;
-                                        height: 12px;
-                                        background-image: url(../images/icons/ic_select.svg);
-                                        background-repeat: no-repeat;
-                                        position: absolute;
-                                        background-size: contain;
-                                        top: 30px;
-                                        right: 24px;
-                                        transition: ease .25s all;
+                                    &.selected{
+                                        background: #294AA2;
+                                        color: #ffffff;
                                     }
-                                }
-                                .options{
-                                    display: none;
-                                    position: absolute;
-                                    top: 56px;
-                                    right: 12px;
-                                    left: 12px;
-                                    width: calc(100% - 24px);
-                                    z-index: 999;
-                                    margin: 0;
-                                    padding: 0;
-                                    list-style: none;
-                                    border: 1px solid #fbfbfb;
-                                    background-color: #fff;
-                                    box-shadow: #00000029 0 3px 6px;
-                                    li{
-                                        margin: 0;
-                                        padding: 12px 22px;
-                                        border-bottom: 1px solid rgba(112,112,112,.11);
-                                        font-weight: 400;
-                                        font-size: 14px;
-                                        line-height: 16px;
-                                        letter-spacing: 0.1em;
-                                        color: #000000;
-                                        &.selected{
-                                            background: #294AA2;
-                                            color: #ffffff;
-                                        }
-                                        &:hover{
-                                            background: #294AA2;
-                                            color: #ffffff;
-                                        }
+                                    &:hover{
+                                        background: #294AA2;
+                                        color: #ffffff;
                                     }
                                 }
                             }
                         }
-                        .col-2{
-                            width: calc(100% / 2 - 37.5px);
-                            &:last-child{
-                                margin-left: 75px;
+                        .group-radio{
+                            margin-top: 27px;
+                            &.horizontal{
+                                display: flex;
                             }
                         }
                     }
@@ -520,6 +578,7 @@
                                                 top: 0;
                                                 z-index: 2;
                                                 &:before{
+                                                    content: "";
                                                     width: 22px;
                                                     height: 22px;
                                                     background: transparent;
@@ -528,6 +587,7 @@
                                                     border: 1px solid #C2D1D9;
                                                     border-radius: 5px;
                                                     cursor: pointer;
+                                                    display: block;
                                                 }
                                             }
                                         }
@@ -623,12 +683,21 @@
                         }
                     }
 
-                    .st-bonds-buttons{
-                        display: flex;
-                        margin-top: 56px;
-                        a:not(:first-child){
-                            margin-left: 34px;
+                    &.bonds-step{
+                        &.no-warning{
+                            @media (max-width: 767.98px){
+                                margin-top: -40px;
+                            }
                         }
+                        &.hide{display: none;}
+                    }
+                }
+
+                .st-bonds-buttons{
+                    display: flex;
+                    margin-top: 56px;
+                    a:not(:last-child){
+                        margin-right: 34px;
                     }
                 }
             }
@@ -641,21 +710,30 @@
                 padding: 12px 29px;
             }
             .bonds-body-wrap {
-                .bonds-warning{
-                    padding: 14.5px 29px;
-                }
                 .wrap-template{
                     padding: 0 29px;
                     .manage-job{
                         margin-top: 56px;
                     }
                 }
-                form .template-form .col-two-field{
-                    margin-top: 32px;
-                    .col-2{
-                        width: calc(100% / 2 - 25px);
-                        &:last-child{
-                            margin-left: 50px;
+                form .template-form {
+                    .bonds-warning{
+                        padding: 14.5px 29px;
+                    }
+                    .col-two-field{
+                        margin-top: 32px;
+                        .col-2{
+                            width: calc(100% / 2 - 25px);
+                            &:last-child{
+                                margin-left: 50px;
+                            }
+                        }
+                    }
+                    .col-multi-field{
+                        margin: -24px -25px;
+                        .bonds-field{
+                            width: calc(50% - 50px);
+                            margin: 24px 25px;
                         }
                     }
                 }
@@ -663,10 +741,15 @@
         }
         @media (max-width: $scr-sm-tablet){
             .bonds-body-wrap {
-                .bonds-warning{padding: 12px 16px;}
-                form .template-form .col-two-field {
-                    .bonds-field label{
-                        padding: 0 8px;
+                form .template-form{
+                    .bonds-warning{padding: 12px 16px;}
+                    .bonds-field {
+                        label{
+                            padding: 0 8px;
+                        }
+                        .custom-select-wrap .custom-select{
+                            padding: 28px 43px;
+                        }
                     }
                 }
             }
@@ -688,42 +771,52 @@
                                 margin-left: 32px;
                             }
                         }
-                        .bonds-field {
-                            label{
-                                left: 16px;
-                                font-size: 13px;
+                    }
+                    .col-multi-field{
+                        margin: -16px;
+                        .bonds-field{
+                            width: calc(50% - 32px);
+                            margin: 16px;
+                        }
+                    }
+                    .bonds-field {
+                        &.single{
+                            margin-top: 32px;
+                        }
+                        label{
+                            left: 16px;
+                            font-size: 13px;
+                        }
+                        .custom-select-wrap {
+                            height: 48px;
+                            .custom-select{
+                                padding: 22px 24px;
+                                display: none;
+                                &:after{
+                                    top: 24px;
+                                }
                             }
-                            .custom-select-wrap {
-                                height: 48px;
-                                .custom-select{
-                                    padding: 22px 24px;
-                                    display: none;
-                                    &:after{
-                                        top: 24px;
-                                    }
-                                }
-                                .select-hidden{
-                                    visibility: visible;
-                                    border: 1px solid #294AA2;
-                                    border-radius: 10px;
-                                    outline: none;
-                                    width: 100%;
-                                    padding: 15px 24px;
-        
-                                    -moz-appearance:none; /* Firefox */
-                                    -webkit-appearance:none; /* Safari and Chrome */
-                                    appearance:none;
-                                    font-size: 14px;
-                                    line-height: 16px;
-                                    font-weight: 400;
-                                    letter-spacing: 0.1em;
-                                    color: #000000;
-        
-                                    background-image: url(../images/icons/ic_select.svg);
-                                    background-repeat: no-repeat;
-                                    background-position: 95% center;
-                                    background-size: 12px;
-                                }
+                            .select-hidden{
+                                visibility: visible;
+                                border: 1px solid #294AA2;
+                                border-radius: 10px;
+                                outline: none;
+                                width: 100%;
+                                padding: 15px 24px;
+    
+                                -moz-appearance:none; /* Firefox */
+                                -webkit-appearance:none; /* Safari and Chrome */
+                                appearance:none;
+                                font-size: 14px;
+                                line-height: 16px;
+                                font-weight: 400;
+                                letter-spacing: 0.1em;
+                                color: #000000;
+    
+                                background-image: url(../images/icons/ic_select.svg);
+                                background-repeat: no-repeat;
+                                background-position: 95% center;
+                                background-size: 12px;
                             }
                         }
                     }
@@ -758,19 +851,36 @@
                     margin-top: 48px;
                 }
                 form {
-                    .template-form .col-two-field{
-                        flex-direction: column;
-                        .col-2{
-                            width: 100%;
-                            &:last-child{
-                                margin-left: 0;
-                                margin-top: 32px;
+                    .template-form {
+                        .col-two-field{
+                            flex-direction: column;
+                            .col-2{
+                                width: 100%;
+                                &:last-child{
+                                    margin-left: 0;
+                                    margin-top: 32px;
+                                }
                             }
                         }
+                        .col-multi-field{
+                            margin: 0;
+                            padding-top: 32px;
+                            .bonds-field{
+                                width: 100%;
+                                margin: 0 0 32px;
+                                &:last-child{
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                        .bonds-field .text-status{
+                            bottom: -15px;
+                        }
                     }
-                    .st-bonds-buttons a{
-                        &:not(:first-child){
-                            margin-left: 24px;
+                    .st-bonds-buttons{
+                        margin-top: 36px;
+                        a:not(:last-child){
+                            margin-right: 24px;
                         }
                     }
                 }

@@ -6,6 +6,7 @@ $(document).ready( function() {
     closePopup();
 
     sortByNameOfTable();
+    limitCharacterTextArea();
 });
 
 function booking_table(){
@@ -55,6 +56,29 @@ function sortByNameOfTable(){
     }
     function getCellValue(row, index){ return $(row).children('td').eq(index).text() }
 
+}
+
+function limitCharacterTextArea(){
+
+    $('.limit_character').keyup( function() {
+
+        var text = $(this).val().replace("\n", "");
+
+        if (text.length > 20) {
+
+            var chunks = text.match(/.{1,20}/g);
+
+            if (chunks.length > 20) { 
+
+                chunks.splice(20, chunks.length - 1);
+
+                alert("if text have more than 10 lines is removed");
+
+            }
+
+            $(this).val( chunks.join("\n") );
+        }
+    });
 }
 
 function bonds_menu_mobile(){

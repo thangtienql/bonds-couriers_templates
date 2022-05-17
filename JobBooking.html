@@ -12,6 +12,7 @@
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/global.js"></script>
     <script src="./assets/js/bonds-common.js"></script>
+    <script src="./assets/js/step-common.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <!-- Start - Member menu at left column -->
                 <div class="bonds-menu">
                     <div class="bonds-menu__logo">
-                        <a href="JobBooking.html">
+                        <a href="JobBookingFirstScreen.html">
                             <img src="./assets/images/logo.svg" alt="logo">
                         </a>
                         <span class="toggle-menu-mobile">
@@ -33,11 +34,11 @@
                     </div>
 
                     <div class="bonds-menu__nav">
-                        <a class="item current" href="JobBooking.html">Job Booking</a>
-                        <a class="item" href="JobBooking.html">Job Enquiry</a>
-                        <a class="item" href="JobBooking.html">Job Quote Estimate</a>
-                        <a class="item" href="JobBooking.html">Activity Report</a>
-                        <a class="item" href="JobBooking.html">Account Management</a>
+                        <a class="item current" href="JobBookingFirstScreen.html">Job Booking</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Job Enquiry</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Job Quote Estimate</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Activity Report</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Account Management</a>
                     </div>
 
                     <div class="bonds-menu__bottom">
@@ -47,7 +48,7 @@
                                 <img src="assets/images/secured-one.svg" alt="secured">
                                 <img src="assets/images/secured-two.svg" alt="secured">
                             </div>
-                        </div>   
+                        </div>
 
                         <div class="bonds-menu__bottom__tips">
                             <img class="icon" src="assets/images/icons/alert.svg" alt="alert">
@@ -83,33 +84,75 @@
 
                 <div class="bonds-body-wrap">
                     <!-- Start - Dashboard content-->
-                    <div class="first-screen-page">
-                        <div class="notification-popup popup">
-                            <img src="./assets/images/icons/ic-close.svg" class="ic-close">
-                            <h2 class="heading">Bonds Transport Group Service Update-NSW</h2>
+                    <div class="content-body-booking--select-account">
+                        <div class="wrap-template">
+                            <form id="form-select-account" action="" method="post">
+                                <div class="template-form bonds-step bonds-step-1">
+                                    <div class="select-account">
+                                        <div class="title">Please select an account below</div>
+                                        <div class="bonds-field single">
+                                            <label>Company ID</label>
+                                            <select class="bonds-company-id-select select-hidden"
+                                                name="eBook[0][bond_company_id_book]">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
 
-                            <div class="content">
-                                <p>We wish to advise the current Covid 19 obligations placed on workers has resulted in
-                                    an
-                                    impact to our service offerings. We ask for your patience and understanding at this
-                                    time.</p>
-                                <p>Priority (PAL) & Express (EG) services will continue to take precedence over Standard
-                                    bookings.</p>
-                                <p>The health, safety and wellbeing of our workers, customers and the community remains
-                                    our
-                                    number one priority.</p>
-                                <p>NOTE: For security purposes make sure to Logout at the end of each session.</p>
-                                <p>Bonds will continue to closely monitor the current situation and continue to comply
-                                    with
-                                    relevant Government, Safety and health authority advice with respect to our ongoing
-                                    operations.</p>
-                                <p>Stay safe and Well!!</p>
-                            </div>
+                                        <div class="bonds-field single">
+                                            <label>User ID</label>
+                                            <select class="bonds-user-id-select select-hidden"
+                                                name="eBook[0][bond_user_id_book]">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
 
-                            <div class="notes">
-                                You are are now logged on to our live database.
-                                All your bookings, enquiries etc. will be in real-time.
-                            </div>
+                                        <div class="bonds-field single">
+                                            <label>Password</label>
+                                            <input type="text" name="password_user_book" required>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-2 hide">
+                                    <div class="select-account">
+                                        <div class="title">Please select an account below</div>
+                                        <div class="bonds-field single">
+                                            <label>Account</label>
+                                            <select class="bonds-company-id-select select-hidden"
+                                                name="eBook[0][bond_company_acount_book]">
+                                                <option value="Lorem Ipsum 1" selected>Lorem Ipsum 1</option>
+                                                <option value="Lorem Ipsum 2">Lorem Ipsum 2</option>
+                                                <option value="Lorem Ipsum 3">Lorem Ipsum 3</option>
+                                                <option value="Lorem Ipsum 4">Lorem Ipsum 4</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="bonds-field single">
+                                            <label>Where will this job be picked up?</label>
+                                            <select class="bonds-pick-job-select select-hidden"
+                                                name="eBook[0][bond_picked_job_book]">
+                                                <option value="1" selected>1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="st-bonds-buttons">
+                                    <a class="cta-button st-next" data-num="1" href="Javascript:;">Continue</a>
+                                    <a class="cta-button redirect no-margin" href="JobBookingA2.html">Continue</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <!-- End - Dashboard content-->

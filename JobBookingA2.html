@@ -12,6 +12,7 @@
     <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/global.js"></script>
     <script src="./assets/js/bonds-common.js"></script>
+    <script src="./assets/js/step-common.js"></script>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                 <!-- Start - Member menu at left column -->
                 <div class="bonds-menu">
                     <div class="bonds-menu__logo">
-                        <a href="JobBooking.html">
+                        <a href="JobBookingFirstScreen.html">
                             <img src="./assets/images/logo.svg" alt="logo">
                         </a>
                         <span class="toggle-menu-mobile">
@@ -33,11 +34,11 @@
                     </div>
 
                     <div class="bonds-menu__nav">
-                        <a class="item current" href="JobBooking.html">Job Booking</a>
-                        <a class="item" href="JobBooking.html">Job Enquiry</a>
-                        <a class="item" href="JobBooking.html">Job Quote Estimate</a>
-                        <a class="item" href="JobBooking.html">Activity Report</a>
-                        <a class="item" href="JobBooking.html">Account Management</a>
+                        <a class="item current" href="JobBookingFirstScreen.html">Job Booking</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Job Enquiry</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Job Quote Estimate</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Activity Report</a>
+                        <a class="item" href="JobBookingFirstScreen.html">Account Management</a>
                     </div>
 
                     <div class="bonds-menu__bottom">
@@ -66,7 +67,7 @@
                 <!-- Start - Top bar information at the top -->
                 <div class="top-bar">
                     <div class="top-bar__heading">
-                        <h2>Job Booking</h2>
+                        <h2>Job Booking - Account  A2 (Operations)</h2>
                     </div>
 
                     <div class="top-bar__account">
@@ -100,13 +101,122 @@
 
                 <div class="bonds-body-wrap">
                     <!-- Start - Dashboard content-->
-                    <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production
-                        purpose</div>
 
                     <div class="content-body-booking">
                         <div class="wrap-template">
                             <form id="form-booking-accountA2" action="" method="post">
-                                <div class="template-form bonds-step bonds-step-4">
+
+                                <div class="template-form bonds-step bonds-step-1 no-warning">
+                                    <div class="services-code">
+                                        <div class="title">Please select an account below</div>
+                                        <div class="bonds-field single--m">
+                                            <label>Select Service Code</label>
+                                            <select class="bonds-service-code-select select-hidden"
+                                                name="eBook[0][bond_service_code_book]">
+                                                <option value="1" selected="">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="bonds-field single--m radio">
+                                            <label>Does this consignment contain dangerous goods?</label>
+                                            <div class="group-radio horizontal">
+                                                <div class="radio-field">Yes
+                                                    <input type="radio" name="dangerous_goods" value="Yes">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">No
+                                                    <input type="radio" checked="checked" name="dangerous_goods"
+                                                        value="No">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bonds-field single--m radio">
+                                            <label>In order to allow us to further enhance the safety precautions
+                                                already in use by our fleet whilst undertaking deliveries, does anyone
+                                                at the pick-up or delivery location:</label>
+                                            <div class="des-field">
+                                                <ul>
+                                                    <li>Have Covid-19 or;</li>
+                                                    <li>Is sick, unwell or exhibiting symptoms of Covid-19 or;</li>
+                                                    <li>Is in isolation/quarantine in accordance with government guidelines</li>
+                                                </ul>
+                                            </div>
+                                            <div class="group-radio horizontal">
+                                                <div class="radio-field">Yes
+                                                    <input type="radio" name="have_covid" value="Yes">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">No
+                                                    <input type="radio" checked="checked" name="have_covid"
+                                                        value="No">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-2 hide">
+                                    <div class="bonds-warning">
+                                        Warning: This is indeed a testing system, do not use for production purpose
+                                    </div>
+                                    <div class="dangerous_goods">
+                                        <div class="title">Dangerous Goods Declaration</div>
+                                        <div class="bonds-field single--m radio">
+                                            <label>Does this consignment contain dangerous goods?</label>
+                                            <div class="group-radio horizontal">
+                                                <div class="radio-field">Yes
+                                                    <input type="radio" name="dangerous_goods_2" value="Yes">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">No
+                                                    <input type="radio" checked="checked" name="dangerous_goods_2" value="No">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-3 hide">
+                                    <div class="bonds-warning">
+                                        Warning: This is indeed a testing system, do not use for production purpose
+                                    </div>
+                                    <div class="special_features">
+                                        <div class="title">Special Features</div>
+                                        <div class="bonds-field single--m radio">
+                                            <label>Choose one of these special features if required:</label>
+                                            <div class="group-radio vertical">
+                                                <div class="radio-field">Tail lift
+                                                    <input type="radio" checked="checked" name="special_features" value="Tail lift">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">HIAB
+                                                    <input type="radio" name="special_features" value="HIAB">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">Racks
+                                                    <input type="radio" name="special_features" value="Racks">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                                <div class="radio-field">Rollers
+                                                    <input type="radio" name="special_features" value="Rollers">
+                                                    <span class="checkmark"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-4 hide">
+                                    <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production
+                                        purpose</div>
+
                                     <div class="contact-info">
                                         <div class="title">Contact Info</div>
                                         <div class="col-two-field">
@@ -151,7 +261,8 @@
                                         <div class="button-submit not-shadow">
                                             <input class="cta-button blue" type="submit" value="Add to Job">
                                         </div>
-                                        <a class="cta-button yellow not-shadow" href="Javascript:;">Manage emails/phone..</a>
+                                        <a class="cta-button yellow not-shadow" href="Javascript:;">Manage
+                                            emails/phone..</a>
                                     </div>
 
                                     <div class="template-view responsive-table">
@@ -234,13 +345,178 @@
                                             </tbody>
                                         </table>
                                     </div>
-
-                                    <div class="st-bonds-buttons">
-                                        <a class="cta-button st-prev yellow" href="Javascript:;">Back</a>
-                                        <a class="cta-button st-next" href="Javascript:;">Continue</a>
-                                    </div>
-
                                 </div>
+
+                                <div class="template-form bonds-step bonds-step-5 hide">
+                                    <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production purpose</div>
+                                    <div class="job_details_booking">
+                                        <div class="title">Job Details</div>
+                                        <div class="col-multi-field">
+                                            <div class="bonds-field">
+                                                <label>Goods Description</label>
+                                                <input type="text" name="detail_good_description_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Qty</label>
+                                                <input type="text" name="detail_qty_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Weight (KG)</label>
+                                                <input type="number" name="detail_weight_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>No. of Pallets</label>
+                                                <input type="number" name="detail_pallets_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Cubic Metres</label>
+                                                <input type="number" name="detail_cubic_metres_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Vehicle Type</label>
+                                                <select class="bonds-vehicle-type-select select-hidden" name="eBook[0][bonds_vehicle_type_book]">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Leg References</label>
+                                                <input type="number" name="detail_leg_references_a2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-6 hide">
+                                    <div class="bonds-warning">Warning: This is indeed a testing system, do not use for production purpose</div>
+                                    <div class="job_details_2_booking">
+                                        <div class="title">Job Details</div>
+                                        <div class="bonds-field single--m">
+                                            <label>Lorem Ipsum</label>
+                                            <select class="bonds-job-details-two-select select-hidden" name="eBook[0][bond_job_detail_two_book]">
+                                                <option value="1" selected="">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-7 hide">
+                                    <div class="bonds-warning">
+                                        Warning: This is indeed a testing system, do not use for production purpose
+                                    </div>
+                                    <div class="lcl">
+                                        <div class="title">LCL Lorem Ipsum</div>
+                                        <div class="col-multi-field">
+                                            <div class="bonds-field">
+                                                <label>Bondstore</label>
+                                                <select class="bonds-bondstore-select select-hidden" name="eBook[0][bond_bondstore]">
+                                                    <option value="1" selected="">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Bond Usage</label>
+                                                <select class="bonds-bondusage-select select-hidden" name="eBook[0][bond_bondusage]">
+                                                    <option value="1" selected="">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Leg Instructions</label>
+                                                <input type="text" name="leg_instructions_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Leg References</label>
+                                                <input type="text" name="leg_references_a2">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-8 hide">
+                                    <div class="bonds-warning">
+                                        Warning: This is indeed a testing system, do not use for production purpose
+                                    </div>
+                                    <div class="pickup_details">
+                                        <div class="title">Pickup Details</div>
+                                        <div class="col-multi-field">
+                                            <div class="bonds-field">
+                                                <label>Address Book</label>
+                                                <select class="bonds-address-book-select select-hidden" name="eBook[0][bond_address_book_a2]">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Company</label>
+                                                <input type="text" name="pickup_detail_company_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Street Address</label>
+                                                <input type="text" name="pickup_detail_street_address_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Suburb / Town</label>
+                                                <input type="text" name="pickup_detail_suburb_town_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Contact</label>
+                                                <input type="text" name="pickup_detail_contact_a2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="template-form bonds-step bonds-step-9 hide">
+                                    <div class="bonds-warning">
+                                        Warning: This is indeed a testing system, do not use for production purpose
+                                    </div>
+                                    <div class="job_details_2">
+                                        <div class="title">Job Details 2</div>
+                                        <div class="col-multi-field">
+                                            <div class="bonds-field">
+                                                <label>Cost Centre</label>
+                                                <select class="bonds-cost-centre select-hidden" name="eBook[0][bonds_cost_centre_detail_2_book]">
+                                                    <option value="1" selected>1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                </select>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Your Reference</label>
+                                                <textarea class="limit_character" name="your_reference_detail_two_a2"></textarea>
+                                                <p class="text-status"><span>0</span> lines entered. Max 20 characters per line</p>
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Order Number</label>
+                                                <input type="number" name="order_number_detail_two_a2">
+                                            </div>
+                                            <div class="bonds-field">
+                                                <label>Instructions</label>
+                                                <textarea name="instructions_detail_two_a2"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="st-bonds-buttons">
+                                    <a class="cta-button st-prev yellow" data-num="0" href="Javascript:;">Back</a>
+                                    <a class="cta-button st-next" data-num="1" href="Javascript:;">Continue</a>
+                                </div>
+
                             </form>
                         </div>
                     </div>

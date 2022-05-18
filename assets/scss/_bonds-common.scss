@@ -352,6 +352,9 @@
                         flex-wrap: wrap;
                         margin: -24px -37.5px;
                         padding-top: 53px;
+                        &.p-0{
+                            padding-top: 0;
+                        }
                         .bonds-field{
                             width: calc(50% - 75px);
                             margin: 24px 37.5px;
@@ -374,6 +377,45 @@
                             top: inherit;
                             padding: inherit;
                         }
+                        &.warning{
+                            input{border-color: #EE1F45;}
+                            .validate{color: #EE1F45;text-transform: lowercase;}
+                        }
+                        &.flex{
+                            display: flex;
+                            align-items: center;
+                            .group-radio{
+                                margin-top: 0;
+                            }
+                        }
+                        &.disable{
+                            label{color: #C4C4C4;}
+                            input{
+                                border-color: #C4C4C4;
+                            }
+                        }
+                        .two-f_min{
+                            display: flex;
+                            input{
+                                width: 50%;
+                                border-radius: 10px 0 0 10px;
+                                &:focus::before{
+                                    width: 0;
+                                    content: '';
+                                }
+                                &:before{
+                                    content: "From 00:00";
+                                    color: #C4C4C4;
+                                    position: absolute;
+                                    background: #fff;
+                                    width: 100px;
+                                }
+                                &:last-child{
+                                    border-radius: 0 10px 10px 0;
+                                    border-left: none;
+                                }
+                            }
+                        }
                         label{
                             font-weight: 400;
                             font-size: 14px;
@@ -387,7 +429,7 @@
                             padding: 0 15px;
                             z-index: 2;
                         }
-                        .text-status{
+                        .text-status, .validate{
                             font-weight: 400;
                             font-size: 10px;
                             line-height: 12px;
@@ -691,6 +733,131 @@
                         }
                         &.hide{display: none;}
                     }
+
+                    .bonds-template-add-new-booking{
+                        .bonds-fields-bookings{
+                            .bonds-item-booking{
+                                margin-top: 60px;
+                                .hr{
+                                    margin-bottom: 40px;
+                                }
+                                .top-item{
+                                    display: flex;
+                                    padding: 14px 24px;
+                                    background: rgba(194, 209, 217, 0.2);
+                                    .select-min{
+                                        font-weight: 700;
+                                        font-size: 18px;
+                                        line-height: 21px;
+                                        color: #11175D;
+                                        display: flex;
+                                        align-items: center;
+                                        &:not(:last-child){
+                                            margin-right: 56px;
+                                        }
+                                        .select-hidden{
+                                            visibility: hidden;
+                                        }
+                                        .custom-select-wrap{
+                                            position: relative;
+                                            height: 35px;
+                                            width: 127px;
+                                            margin-left: 30px;
+                                            .custom-select{
+                                                position: absolute;
+                                                background: #F5AF02;
+                                                top: 0;
+                                                right: 0;
+                                                bottom: 0;
+                                                left: 0;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                white-space: nowrap;
+                                                display: block;
+                                                vertical-align: middle;
+                                                border-radius: 5px;
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 16px;
+                                                letter-spacing: 0.1em;
+                                                color: #ffffff;
+                                                padding: 10px 23px;
+                                                text-align: center;
+                                                cursor: pointer;
+                                                &:after{
+                                                    content: "";
+                                                    width: 9px;
+                                                    height: 9px;
+                                                    background-image: url(../images/icons/select-w.svg);
+                                                    background-repeat: no-repeat;
+                                                    position: absolute;
+                                                    background-size: contain;
+                                                    top: 14px;
+                                                    right: 5px;
+                                                    transition: ease .25s all;
+                                                }
+                                            }
+                                            .options{
+                                                display: none;
+                                                list-style: none;
+                                                margin: 0px;
+                                                padding: 0px;
+                                                position: absolute;
+                                                background: #fff;
+                                                width: 100%;
+                                                box-shadow: #00000029 0px 3px 6px;
+                                                z-index: 999;
+                                                top: 30px;
+                                                left: 0;
+                                                li{
+                                                    cursor: pointer;
+                                                    padding: 8px;
+                                                    font-weight: 400;
+                                                    font-size: 14px;
+                                                    line-height: 16px;
+                                                    letter-spacing: 0.1em;
+                                                    color: #000000;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .group-btn-controls{
+                            background: rgba(194, 209, 217, 0.2);
+                            padding: 14px 11px 14px 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            margin-top: 52px;
+                            .des{
+                                font-weight: 700;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #11175D;
+                                width: calc(100% - 373px);
+                            }
+                            .buttons{
+                                width: 373px;
+                                a{
+                                    background: #F5AF02;
+                                    border-radius: 5px;
+                                    padding: 10px 28px;
+                                    text-decoration: none;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 16px;
+                                    letter-spacing: 0.1em;
+                                    color: #FFFFFF;
+                                    display: inline-block;
+                                    &:not(:first-child){
+                                        margin-left: 15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
 
                 .st-bonds-buttons{
@@ -762,6 +929,9 @@
             .bonds-body-wrap {
                 .wrap-template{
                     padding: 0 16px;
+                    .manage-job{
+                        margin-top: 32px;
+                    }
                 }
                 form .template-form {
                     .col-two-field {
@@ -782,6 +952,9 @@
                     .bonds-field {
                         &.single{
                             margin-top: 32px;
+                            &--m{
+                                margin-top: 32px;
+                            }
                         }
                         label{
                             left: 16px;
@@ -822,6 +995,31 @@
                     }
                     .st-bonds-buttons{
                         margin-top: 32px;
+                    }
+                    .bonds-template-add-new-booking {
+                        .bonds-fields-bookings .bonds-item-booking {
+                            margin-top: 32px;
+                            .top-item .select-min{
+                                font-size: 16px;
+                                &:not(:last-child){
+                                    margin-right: 24px;
+                                }
+                                .custom-select-wrap{
+                                    margin-left: 12px;
+                                }
+                            }
+                        }
+                        .group-btn-controls{
+                            flex-direction: column;
+                            align-items: flex-start;
+                            .des{
+                                width: 100%;
+                                font-size: 16px;
+                            }
+                            .buttons{
+                                margin-top: 12px;
+                            }
+                        }
                     }
                 }
             }
@@ -875,6 +1073,20 @@
                         }
                         .bonds-field .text-status{
                             bottom: -15px;
+                        }
+                        .bonds-template-add-new-booking {
+                            .bonds-fields-bookings .bonds-item-booking .top-item{
+                                flex-direction: column;
+                                .select-min{
+                                    &:not(:last-child){
+                                        margin-right: 0;
+                                        margin-bottom: 12px;
+                                    }
+                                }
+                            }
+                            .group-btn-controls{
+                                margin-top: 32px;
+                            }
                         }
                     }
                     .st-bonds-buttons{

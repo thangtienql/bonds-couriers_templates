@@ -130,19 +130,37 @@
             }
         }
 
+        .bonds-step-10{
+            .bonds-field.flex{
+                margin-top: 60px;
+                margin-bottom: 36px;
+                .group-radio{padding-left: 32px;}
+            }
+            .manage-job{
+                margin-top: 60px;
+            }
+        }
+
     }
     @media (max-width: $scr-mb){
         padding: 70px 0 32px;
-        .wrap-template .rt-buttons-controls{
-            &.multi {
-                .cta-button.yellow{
-                    margin-left: 24px;
+        .wrap-template {
+            .rt-buttons-controls{
+                &.multi {
+                    .cta-button.yellow{
+                        margin-left: 24px;
+                    }
                 }
+            }
+            .bonds-step-10 .bonds-field.flex{
+                margin-top: 32px;
+                margin-bottom: 32px;
             }
         }
         &--select-account{
             padding: 13px 0 32px;
         }
+
     }
     @media (max-width: 599.98px){
         

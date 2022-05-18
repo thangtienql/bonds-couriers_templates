@@ -124,7 +124,48 @@ body{
             background: #C4C4C4;
           }
       }
-  
+      
+      input[type=date]{
+        &::-webkit-calendar-picker-indicator{
+          background: url(../images/icons/icon-calendar.svg) no-repeat;
+          background-size: contain;
+          background-position:  center;
+          width: 24px;
+          height: 24px;
+          display: block;
+          position: absolute;
+          top: 21px;
+          right: 21px;
+        }
+      }
+      input[type=time]{
+        position: relative;
+        &::-webkit-calendar-picker-indicator{
+          position: absolute;
+          top: 24px;
+          right: 21px;
+        }
+        &.__has_value{
+          &:before{display: none;}
+        }
+        &:before{
+          content: "00:00";
+          color: #C4C4C4;
+          position: absolute;
+          background: #fff;
+          width: 100px;
+          font-family: 'Roboto';
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.1em;
+        }
+        &:focus::before{
+          width: 0;
+          content: '';
+        }
+      }
+
       /* start - remove Arrows/Spinners */
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
@@ -218,6 +259,10 @@ body{
                     background: rgba(25, 63, 246, 0.35);
                 }
             }
+            &.st-cancel, &.btn-submit-form{
+              display: none;
+              padding: 19px 23px 20px;
+            }
       }
       /* end - style button submit */
 
@@ -298,6 +343,17 @@ body{
       th { font-weight: bold; }
       /* end - tables */
 
+      .hr{
+        border-bottom: 5px solid #294AA2;
+        border-radius: 8px;
+        &.m-60{
+          margin: 60px 0;
+        }
+        &.m-40{
+          margin: 60px 0 40px;
+        }
+      }
+
       @media (max-width: $scr-sm-tablet){
         input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
         textarea {
@@ -306,10 +362,12 @@ body{
       }
 
       @media (max-width: $scr-mb){
-        input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), body textarea{
+        input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+        textarea{
           padding: 16px 24px;
           height: 48px;
         }
+
         input[type=submit], input[type=button], 
         button, .btn, .cta-button{
           min-height: 54px;
@@ -317,6 +375,66 @@ body{
           padding: 16px 24px;
           font-size: 16px;
         }
+
+        input[type=date]{
+          &::-webkit-calendar-picker-indicator{
+            background-size: contain;
+            background-position:  center;
+            width: 12px;
+            height: 12px;
+            display: block;
+            position: absolute;
+            top: 14px;
+            right: 21px;
+          }
+        }
+        input[type=time]{
+          &::-webkit-calendar-picker-indicator{
+            top: 12px;
+          }
+          &.__has_value{
+            &:before{display: none;}
+          }
+          &:before{
+            content: "00:00";
+            color: #C4C4C4;
+            position: absolute;
+            background: #fff;
+            width: 100px;
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.1em;
+          }
+          &:focus::before{
+            width: 0;
+            content: '';
+          }
+        }
+
+        .radio-field{
+          padding-left: 32px;
+          input[type=radio]{
+            height: 24px;
+            &:checked ~ .checkmark::before{
+              width: 14px;
+              height: 14px;
+            }
+          }
+          .checkmark{
+            width: 24px;
+            height: 24px;
+            top: -4px;
+          }
+        }
+
+        .hr{
+          &.m-60{
+            margin: 32px 0;
+          }
+        }
+
       }
 
       @media (max-width: 599.98px){
@@ -326,6 +444,12 @@ body{
           min-width: 130px;
           padding: 13px 24px;
           font-size: 16px;
+        }
+
+        .cta-button{
+          &.st-cancel, &.btn-submit-form{
+            padding: 13px 24px;
+          }
         }
       }
 }
